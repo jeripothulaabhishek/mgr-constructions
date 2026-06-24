@@ -1,137 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Heart, Sparkles, Clock } from "lucide-react";
 
 export default function AboutSection() {
-  const values = [
+  const stats = [
     {
-      title: "Generational Quality",
-      desc: "Every home is crafted using premium, certified materials, ensuring structural safety and long-term value.",
-      icon: ShieldCheck,
+      value: "15+",
+      label: "YEARS",
+      desc: "Of structural legacy and crafting residential spaces.",
     },
     {
-      title: "Timely Handover",
-      desc: "We respect your family's planning. Our project execution strictly adheres to delivery schedules.",
-      icon: Clock,
+      value: "500+",
+      label: "FAMILIES",
+      desc: "Whose trust and lifestyle aspirations we support.",
+    },
+    {
+      value: "20+",
+      label: "PROJECTS",
+      desc: "Delivered on schedule across West Hyderabad.",
+    },
+    {
+      value: "100%",
+      label: "TRUST",
+      desc: "Absolute HMDA approvals and clear legal titles.",
     },
   ];
 
   return (
-    <section id="about" className="py-24 bg-primary relative overflow-hidden font-sans">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(201,162,39,0.02),transparent_50%)] pointer-events-none" />
-
+    <section 
+      id="about-section" 
+      className="py-32 bg-transparent relative overflow-hidden font-sans"
+    >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
-        {/* Left Column: Image Card Showcase */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-6 relative w-full h-[480px]"
-        >
-          <div className="absolute -inset-4 border border-gold/10 rounded-2xl pointer-events-none rotate-2" />
+        {/* Left Column: Brand narrative and massive metrics grid (Spans 7 Columns) */}
+        <div className="lg:col-span-7 flex flex-col space-y-12 text-left z-30">
           
-          <div className="absolute inset-0 bg-white border border-border-accent rounded-2xl overflow-hidden shadow-xl flex flex-col justify-between p-8 group">
-            {/* Grid line background overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(201,162,39,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(201,162,39,0.015)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
-            
-            <div className="flex justify-between items-start z-10">
-              <span className="text-[9px] uppercase font-bold tracking-widest text-gold font-sans bg-primary px-2 py-1 rounded border border-border-accent">
-                Family & Legacy
-              </span>
-              <span className="text-[10px] font-mono text-text-muted/40">ESTD. 2021</span>
-            </div>
-
-            <div className="flex flex-col space-y-4 z-10 text-left">
-              <h3 className="text-2xl font-bold text-text-main font-headings uppercase">
-                Designed for <br />
-                Beautiful Living
-              </h3>
-              <p className="text-xs text-text-muted leading-relaxed font-light">
-                We believe a home is where memories are created and legacies are built. Our layout plans prioritize natural light, cross-ventilation, and spatial comfort for families to thrive.
-              </p>
-            </div>
-
-            {/* Satisfaction Progress Check */}
-            <div className="space-y-2 z-10 bg-primary/70 p-4 rounded-xl border border-border-accent">
-              <div className="flex justify-between text-[9px] text-text-main font-bold uppercase tracking-wider">
-                <span>Customer Care Index</span>
-                <span className="text-gold">100% Satisfaction</span>
-              </div>
-              <div className="w-full h-1.5 bg-white rounded-full overflow-hidden border border-border-accent">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "100%" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1.2, delay: 0.3 }}
-                  className="h-full bg-gold rounded-full"
-                />
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right Column: Content Stories */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-6 flex flex-col space-y-8 text-left"
-        >
-          <div className="flex flex-col space-y-3">
-            <span className="text-[10px] uppercase font-bold tracking-widest text-gold block">
-              MGR DEVELOPERS
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col space-y-4"
+          >
+            <span className="luxury-label text-gold block">
+              Generational Developer
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-text-main font-headings uppercase leading-tight">
-              Building Homes That <br />Last Generations
+            <h2 className="luxury-title text-text-main font-headings uppercase leading-none tracking-tight">
+              Building Legacy Homes<br />For Hyderabad
             </h2>
-            <p className="text-sm text-text-muted leading-relaxed font-light mt-2">
-              At MGR, we don't just build apartments; we craft high-quality residential sanctuaries where families find absolute peace. Under the leadership of M. Gopal Reddy, we combine timeless architectural principles with premium brand finishes to create premium communities in Hyderabad.
+            <p className="luxury-paragraph text-text-muted leading-relaxed font-light mt-4 max-w-xl">
+              At MGR Constructions, we build premium family sanctuaries. Under the leadership of M. Gopal Reddy, we blend architectural principles with premium craftsmanship to create residences that appreciate across generations.
             </p>
-          </div>
+          </motion.div>
 
-          {/* Mission & Vision cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
-            <div className="p-5 bg-white border border-border-accent rounded-xl flex flex-col space-y-3 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-gold">
-                <Heart className="w-5 h-5" />
-              </div>
-              <h4 className="text-xs font-bold text-text-main uppercase tracking-wider">Family Comfort</h4>
-              <p className="text-[11px] text-text-muted leading-relaxed font-light">
-                Providing layouts focusing on privacy, modern convenience, and children's safety.
-              </p>
-            </div>
-
-            <div className="p-5 bg-white border border-border-accent rounded-xl flex flex-col space-y-3 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center text-gold">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <h4 className="text-xs font-bold text-text-main uppercase tracking-wider">Timeless Architecture</h4>
-              <p className="text-[11px] text-text-muted leading-relaxed font-light">
-                Blending aesthetics with Vastu integrity and high resale valuations.
-              </p>
-            </div>
-          </div>
-
-          {/* Core values list */}
-          <div className="space-y-4 pt-4 border-t border-border-accent">
-            {values.map((v) => (
-              <div key={v.title} className="flex gap-4 items-start">
-                <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center text-gold mt-1 shrink-0">
-                  <v.icon className="w-3.5 h-3.5" />
-                </div>
-                <div className="flex flex-col space-y-1">
-                  <span className="text-xs font-bold text-text-main uppercase tracking-wider">{v.title}</span>
-                  <span className="text-xs text-text-muted leading-relaxed font-light">{v.desc}</span>
-                </div>
-              </div>
+          {/* Massive Editorial Stats Grid */}
+          <div className="grid grid-cols-2 gap-x-12 gap-y-16 pt-12 border-t border-border-accent/40">
+            {stats.map((stat, idx) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: idx * 0.1 }}
+                className="flex flex-col text-left group"
+              >
+                <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-gold font-headings tracking-tighter leading-none group-hover:scale-105 transition-transform duration-500 origin-left">
+                  {stat.value}
+                </span>
+                <span className="luxury-label text-text-main uppercase mt-3">
+                  {stat.label}
+                </span>
+                <span className="text-xs text-text-muted mt-1 leading-normal font-light max-w-[200px]">
+                  {stat.desc}
+                </span>
+              </motion.div>
             ))}
           </div>
 
-        </motion.div>
+        </div>
+
+        {/* Right Column: Left empty for the centerpiece island (Spans 5 Columns) */}
+        <div className="lg:col-span-5 relative w-full h-[400px] lg:h-[600px] flex items-center justify-center z-10 pointer-events-none select-none">
+          {/* Subtle architectural circular rings highlighting the floating centerpiece */}
+          <div className="absolute w-[240px] h-[240px] border border-gold/10 rounded-full animate-[spin_80s_linear_infinite]" style={{ borderStyle: "dashed" }} />
+          <div className="absolute w-[360px] h-[360px] border border-gold/5 rounded-full animate-[spin_120s_linear_infinite]" />
+        </div>
+
       </div>
     </section>
   );

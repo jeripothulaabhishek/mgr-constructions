@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Unused large files & temporary media
+/src/components/video.html
+/src/components/video_files/
+/public/uploads/hero/floating-island.png

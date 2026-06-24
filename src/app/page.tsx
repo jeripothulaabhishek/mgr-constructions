@@ -1,50 +1,60 @@
 import Hero from "@/components/hero/Hero";
-import TrustBar from "@/components/hero/TrustBar";
 import AboutSection from "@/components/common/AboutSection";
-import Services from "@/components/services/Services";
+import WhyChooseMGR from "@/components/common/WhyChooseMGR";
+import ConstructionPhilosophy from "@/components/common/ConstructionPhilosophy";
 import Amenities from "@/components/common/Amenities";
-import CostCalculator from "@/components/forms/CostCalculator";
+import LocationAdvantages from "@/components/common/LocationAdvantages";
 import ProjectsFeatured from "@/components/projects/ProjectsFeatured";
-import JointVenture from "@/components/jv/JointVenture";
 import TestimonialSlider from "@/components/testimonials/TestimonialSlider";
-import FAQSection from "@/components/common/FAQSection";
 import ContactForm from "@/components/forms/ContactForm";
+import FloatingIslandCenterpiece from "@/components/hero/FloatingIslandCenterpiece";
+import SmoothScroll from "@/components/common/SmoothScroll";
+import LuxuryLoader from "@/components/common/LuxuryLoader";
+import SectionProgress from "@/components/common/SectionProgress";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full min-h-screen">
-      {/* Hero Showcase */}
-      <Hero />
+    <SmoothScroll>
+      {/* Preloading luxury screen experience (v2.2) */}
+      <LuxuryLoader />
 
-      {/* Trust & Rating Counters */}
-      <TrustBar />
+      {/* Floating dot progress navigation tracker (v2.2) */}
+      <SectionProgress />
 
-      {/* About Us Story (Generational Homes) */}
-      <AboutSection />
+      {/* 3D Floating Island Centerpiece (Fixed overlay with scroll animations) */}
+      <FloatingIslandCenterpiece />
 
-      {/* Services Grid */}
-      <Services />
+      {/* Main scroll track for GSAP triggers */}
+      <div id="main-scroll-track" className="relative w-full min-h-screen">
+        {/* Section 1: Floating Island Hero */}
+        <Hero />
 
-      {/* Luxury Amenities Illustrated Grid */}
-      <Amenities />
+        {/* Section 2: About MGR (Brand Story) */}
+        <AboutSection />
 
-      {/* Cost Calculator Section */}
-      <CostCalculator />
+        {/* Section 3: Why Choose MGR (Trust Cards) */}
+        <WhyChooseMGR />
 
-      {/* Property Featured Listings */}
-      <ProjectsFeatured />
+        {/* Section 4: Construction Philosophy (Architectural Standard) */}
+        <ConstructionPhilosophy />
 
-      {/* Landowner Joint Venture Partnership Panel */}
-      <JointVenture />
+        {/* Section 5: Amenities (Curated Comfort) */}
+        <Amenities />
 
-      {/* Client Reviews Slider */}
-      <TestimonialSlider />
+        {/* Section 6: Location Advantages */}
+        <LocationAdvantages />
 
-      {/* FAQ accordion */}
-      <FAQSection />
+        {/* Section 7: Featured Projects (Apple Showcase) */}
+        <ProjectsFeatured />
 
-      {/* Contact & Map Desk */}
-      <ContactForm />
-    </div>
+        {/* Section 8: Testimonials (Drifting Glass Reviews) */}
+        <TestimonialSlider />
+
+        {/* Section 9: Contact & WhatsApp Desk */}
+        <ContactForm />
+      </div>
+    </SmoothScroll>
   );
 }
+
+

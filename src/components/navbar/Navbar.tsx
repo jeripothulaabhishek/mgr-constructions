@@ -1,11 +1,45 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone, Calendar } from "lucide-react";
 import { COMPANY } from "@/config/company";
 import { MAIN_NAV } from "@/config/navigation";
+
+function MagneticButton({ children, onClick, className }: { children: React.ReactNode; onClick?: () => void; className?: string }) {
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!btnRef.current) return;
+    const { clientX, clientY } = e;
+    const { left, top, width, height } = btnRef.current.getBoundingClientRect();
+    const x = clientX - (left + width / 2);
+    const y = clientY - (top + height / 2);
+    setPosition({ x: x * 0.2, y: y * 0.2 }); // Subtle 20% tracking
+  };
+
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  return (
+    <button
+      ref={btnRef}
+      onClick={onClick}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+        transition: position.x === 0 && position.y === 0 ? "transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)" : "none",
+      }}
+      className={className}
+    >
+      {children}
+    </button>
+  );
+}
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -38,13 +72,13 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "py-4 glass-panel shadow-sm border-b border-border-accent"
-          : "py-6 bg-transparent"
+          ? "py-5 bg-white/70 backdrop-blur-md shadow-md border-b border-border-accent"
+          : "py-8 bg-white/35 backdrop-blur-sm border-b border-border-accent/30"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex flex-col group text-left">
+        <Link href="/" className="flex flex-col group text-left transition-transform duration-300 hover:scale-102">
           <span className="text-xl md:text-2xl font-bold tracking-wider text-text-main uppercase font-headings">
             MGR
           </span>
@@ -68,10 +102,10 @@ export default function Navbar() {
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
                   <button
-                    className={`flex items-center gap-1 text-xs font-bold tracking-widest uppercase transition-colors ${
+                    className={`flex items-center gap-1 text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:text-gold relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-gold after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:duration-300 after:origin-left ${
                       activeDropdown === link.label || pathname.startsWith(link.href)
-                        ? "text-gold"
-                        : "text-text-muted hover:text-text-main"
+                        ? "text-gold after:scale-x-100"
+                        : "text-text-muted after:scale-x-0"
                     }`}
                   >
                     {link.label}
@@ -107,8 +141,8 @@ export default function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-xs font-bold tracking-widest uppercase transition-colors hover:text-gold ${
-                  isActive ? "text-gold" : "text-text-muted"
+                className={`text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:text-gold relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1.5px] after:bg-gold after:scale-x-0 after:hover:scale-x-100 after:transition-transform after:duration-300 after:origin-left ${
+                  isActive ? "text-gold after:scale-x-100" : "text-text-muted after:scale-x-0"
                 }`}
               >
                 {link.label}
@@ -126,13 +160,13 @@ export default function Navbar() {
             <Phone className="w-4 h-4 text-gold" />
             <span>{COMPANY.phone}</span>
           </a>
-          <button
+          <MagneticButton
             onClick={triggerSiteVisit}
-            className="px-5 py-2.5 bg-gold text-white rounded-lg text-xs font-bold tracking-widest uppercase hover:bg-text-main hover:text-white transition-all duration-300 shadow-md hover:shadow-gold/10 flex items-center gap-2 group cursor-pointer"
+            className="px-5 py-2.5 bg-gold text-white rounded-lg text-[10px] font-bold tracking-widest uppercase btn-luxury-shimmer flex items-center gap-2 group cursor-pointer border border-gold/20"
           >
-            <Calendar className="w-4 h-4 transition-transform group-hover:scale-110" />
+            <Calendar className="w-3.5 h-3.5 transition-transform group-hover:scale-110" />
             Book Site Visit
-          </button>
+          </MagneticButton>
         </div>
 
         {/* Mobile menu controllers */}

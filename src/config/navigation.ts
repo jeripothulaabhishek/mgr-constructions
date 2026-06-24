@@ -5,10 +5,8 @@ export interface NavLink {
 }
 
 export const MAIN_NAV: NavLink[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   {
-    label: "Projects",
+    label: "Residences",
     href: "/projects",
     children: [
       { label: "Featured Projects", href: "/projects", description: "Explore our premium luxury spaces." },
@@ -16,10 +14,11 @@ export const MAIN_NAV: NavLink[] = [
       { label: "Platinum Enclave", href: "/projects/platinum-enclave", description: "Ultra-luxury premium towers." },
     ],
   },
-  { label: "Services", href: "/services" },
-  { label: "Joint Venture", href: "/jv" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Locations", href: "/#location-section" },
+  { label: "Joint Ventures", href: "/jv" },
+  { label: "About MGR", href: "/about" },
+  { label: "Insights", href: "/blog" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const FOOTER_QUICK_LINKS = [

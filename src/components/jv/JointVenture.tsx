@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { motion } from "framer-motion";
-import { FileCheck, Users, TrendingUp, Landmark, Loader2, ArrowRight } from "lucide-react";
+import { FileCheck, TrendingUp, Landmark, Loader2, ArrowRight, Compass, ShieldAlert } from "lucide-react";
 
 const jvSchema = zod.object({
   name: zod.string().min(2, "Name must be at least 2 characters"),
@@ -98,93 +98,98 @@ export default function JointVenture() {
     }
   };
 
-  const benefits = [
-    {
-      title: "Transparent JDAs",
-      desc: "Vetted Joint Development Agreements protecting landowner rights with transparent legal terms.",
-      icon: Landmark,
-    },
-    {
-      title: "Optimal Equity Ratios",
-      desc: "Earn high Area-Sharing and Revenue-Sharing percentages based on competitive Hyderabad market rates.",
-      icon: TrendingUp,
-    },
-    {
-      title: "End-to-End Handling",
-      desc: "We manage and finance all TS-bPASS municipal approvals, RERA registrations, and connections.",
-      icon: FileCheck,
-    },
-    {
-      title: "Proven Timeline Execution",
-      desc: "Supported by a professional engineering team delivering landmarks on or ahead of contract dates.",
-      icon: Users,
-    },
-  ];
-
   return (
-    <section id="jv" className="py-24 bg-primary relative overflow-hidden font-sans">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(201,162,39,0.02),transparent_50%)] pointer-events-none" />
-
+    <section 
+      id="jv-section" 
+      className="py-32 bg-transparent relative overflow-hidden font-sans"
+    >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
-        {/* Left: copy content */}
+        {/* Left: landowner content & rising infographic parcels */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="lg:col-span-6 space-y-8 text-left"
+          className="lg:col-span-6 space-y-8 text-left z-30"
         >
           <div className="space-y-3">
             <span className="text-[10px] uppercase font-bold tracking-widest text-gold block">
-              LAND COLLABORATION
+              Land Collaboration Partnerships
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-text-main font-headings uppercase leading-tight">
-              Partner With Confidence
+            <h2 className="text-3xl md:text-5xl font-extrabold text-text-main font-headings uppercase leading-tight">
+              Unlock Maximum Plot Valuations
             </h2>
-            <p className="text-sm text-text-muted leading-relaxed font-light mt-2">
-              Transform your clear-titled prime plots in Hyderabad into premium residential landmarks. We finance, build, and market the entire development, securing maximum valuation for your asset.
+            <p className="text-sm text-text-muted leading-relaxed font-light mt-2 max-w-xl">
+              Partner with MGR to transform your clear-titled prime plots into premium residential complexes. We fully finance, construct, and manage approvals and sales, securing optimal equity and area-sharing terms for you.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-            {benefits.map((b) => (
-              <div key={b.title} className="flex gap-4 text-left">
-                <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold mt-0.5 shrink-0 shadow-sm">
-                  <b.icon className="w-5 h-5" />
-                </div>
-                <div className="flex flex-col space-y-1">
-                  <span className="text-xs font-bold text-text-main uppercase tracking-wider">{b.title}</span>
-                  <span className="text-[11px] text-text-muted leading-relaxed font-light">{b.desc}</span>
-                </div>
-              </div>
-            ))}
+          {/* Premium Infographic: Rising JDA Area Share Breakdown */}
+          <div className="p-6 glass-panel rounded-2xl border border-gold/20 flex flex-col space-y-6 max-w-lg shadow-sm">
+            <div className="flex justify-between items-center">
+              <span className="text-[10px] uppercase tracking-widest font-bold text-gold">JDAs Sharing Allocation Diagram</span>
+              <Compass className="w-4 h-4 text-gold" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {/* Landowner Share rising block */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.2 }}
+                className="origin-bottom bg-gradient-to-t from-gold/5 to-gold/20 border border-gold/30 rounded-xl p-5 flex flex-col justify-end min-h-[160px] text-left"
+              >
+                <span className="text-3xl font-black text-gold font-headings leading-none">50%</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-text-main mt-2 block">Landowner Share</span>
+                <span className="text-[9px] text-text-muted mt-1 leading-normal font-light">Direct area allotment or profit sharing.</span>
+              </motion.div>
+
+              {/* Developer Share block */}
+              <motion.div
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 0.4 }}
+                className="origin-bottom bg-gradient-to-t from-text-main/5 to-text-main/15 border border-border-accent rounded-xl p-5 flex flex-col justify-end min-h-[160px] text-left"
+              >
+                <span className="text-3xl font-black text-text-main font-headings leading-none">50%</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-text-main mt-2 block">Developer Share</span>
+                <span className="text-[9px] text-text-muted mt-1 leading-normal font-light">MGR finances 100% of construction & clearances.</span>
+              </motion.div>
+            </div>
+
+            <div className="flex gap-3 text-[10px] text-text-muted font-bold uppercase tracking-wider items-start">
+              <ShieldAlert className="w-4 h-4 text-gold shrink-0 mt-0.5" />
+              <span>Full legal security, certified escrow management, and bank guarantees provided to landowners.</span>
+            </div>
           </div>
         </motion.div>
 
         {/* Right: Form card */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="lg:col-span-6"
+          className="lg:col-span-6 z-30"
         >
-          <div className="glass-card rounded-2xl p-8 border border-border-accent shadow-lg relative bg-white">
+          <div className="glass-card rounded-2xl p-8 border border-border-accent shadow-lg relative bg-white/90">
             <h3 className="text-base font-bold text-text-main uppercase tracking-wider mb-6 font-headings">
-              Book JV Consultation
+              Book JDA Consultation
             </h3>
 
             {success ? (
               <div className="py-12 flex flex-col items-center justify-center text-center font-sans">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 shadow-sm animate-pulse">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 mb-4 shadow-sm animate-pulse">
                   <FileCheck className="w-6 h-6" />
                 </div>
                 <h4 className="text-emerald-500 font-bold uppercase tracking-wider text-xs font-headings">
-                  Request Transmitted!
+                  Inquiry Transmitted!
                 </h4>
                 <p className="text-xs text-text-muted mt-2 max-w-xs leading-relaxed font-light">
-                  Thank you. Our land collaboration department will contact you to arrange a valuation audit.
+                  Thank you. Our partnership audit team will contact you to set up a site evaluation.
                 </p>
               </div>
             ) : (
