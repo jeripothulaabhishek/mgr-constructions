@@ -19,34 +19,34 @@ interface TestimonialCard {
 const FEATURED_REVIEWS: TestimonialCard[] = [
   {
     id: "t1",
-    name: "Dr. K. Srinivas Rao",
+    name: "Rahul Sharma",
     role: "Landowner & Partner",
-    project: "Manikonda Joint Venture",
+    project: "Prime Joint Venture",
     familyType: "Joint Family Stakeholder",
-    feedback: "Partnering with MGR for our Joint Venture plot in Manikonda was seamless. Their team managed the clearances transparently, and we received our share of flats exactly on time.",
-    image: "/uploads/testimonials/homeowner_3.png", // Retired exec
+    feedback: "Partnering with Prime Estates for our Joint Venture plot was seamless. Their team managed the clearances transparently, and we received our share of residences exactly on time.",
+    image: "/uploads/testimonials/homeowner_3.png",
     position: "lg:top-8 lg:left-8",
     animationClass: "animate-[drift-1_8s_ease-in-out_infinite]",
   },
   {
     id: "t2",
-    name: "Divya Deshmukh",
+    name: "Priya Mehta",
     role: "Homeowner",
-    project: "MGR Manikonda Residences",
+    project: "Skyline Heights",
     familyType: "4-Member Family",
-    feedback: "We wanted a home where our children could grow up safely close to Delhi Public School. The natural light in our 3BHK is beautiful, and the customer team was incredibly helpful.",
-    image: "/uploads/testimonials/homeowner_2.png", // Businesswoman / mother
+    feedback: "We wanted a sanctuary where our children could grow up safely close to top educational hubs. The natural sunlight in our 3BHK is beautiful, and the customer support team was helpful.",
+    image: "/uploads/testimonials/homeowner_2.png",
     position: "lg:top-28 lg:right-10",
     animationClass: "animate-[drift-2_9s_ease-in-out_infinite]",
   },
   {
     id: "t3",
-    name: "Abhinav Reddy",
+    name: "Arjun Patel",
     role: "Custom Villa Client",
-    project: "Gachibowli Signature Villa",
+    project: "Financial District Estate",
     familyType: "Multi-generational Homeowner",
-    feedback: "MGR built our family villa in Gachibowli. Their team took care of all approvals, keeping us updated on material logs weekly. The final layout aligns perfectly with Vastu.",
-    image: "/uploads/testimonials/homeowner_1.png", // Young executive
+    feedback: "Prime Estates constructed our family villa. Their project team managed all statutory approvals, keeping us updated on material logs weekly. The layout aligns perfectly with Vastu.",
+    image: "/uploads/testimonials/homeowner_1.png",
     position: "lg:bottom-12 lg:left-12",
     animationClass: "animate-[drift-3_7.5s_ease-in-out_infinite]",
   },
@@ -69,7 +69,7 @@ export default function TestimonialSlider() {
             Ecosystem Testimonials
           </h2>
           <p className="text-sm text-text-muted mt-3 leading-relaxed font-light">
-            Read how Hyderabad families and landowners experience trust, comfort, and premium living with MGR.
+            Read how resident families and landowners experience trust, comfort, and luxury living with Prime Estates.
           </p>
         </div>
 

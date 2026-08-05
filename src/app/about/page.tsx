@@ -1,8 +1,8 @@
 import AboutSection from "@/components/common/AboutSection";
 
 export const metadata = {
-  title: "About MGR Constructions | Engineering Quality Builders in Hyderabad",
-  description: "Learn about the mission, vision, and core engineering quality values that define MGR Constructions Private Limited.",
+  title: "About Prime Estates | Luxury Architectural Real Estate",
+  description: "Learn about the mission, vision, and core engineering quality values that define Prime Estates Private Limited.",
 };
 
 export default function AboutPage() {

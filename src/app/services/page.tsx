@@ -1,8 +1,8 @@
 import Services from "@/components/services/Services";
 
 export const metadata = {
-  title: "Services | Turnkey Construction & Elevation Design Hyderabad",
-  description: "Browse premium real estate and civil construction services offered by MGR Constructions across Hyderabad.",
+  title: "Services | Turnkey Development & Architectural Design",
+  description: "Browse premium real estate and civil development services offered by Prime Estates.",
 };
 
 export default function ServicesPage() {

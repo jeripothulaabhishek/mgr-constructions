@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: BlogPageProps) {
   if (!post) return {};
 
   return {
-    title: `${post.title} | MGR Knowledge Hub`,
+    title: `${post.title} | Prime Knowledge Hub`,
     description: post.summary,
     openGraph: {
       title: post.title,
@@ -54,7 +54,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
             Back to Hub
           </Link>
           <span className="text-[10px] uppercase font-bold tracking-widest text-text-muted/40">
-            MGR Article Detail
+            Article Detail
           </span>
         </div>
 
@@ -91,7 +91,6 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           {/* Article Text */}
           <div className="lg:col-span-8 space-y-8 font-sans leading-relaxed text-sm text-text-main/90 font-light">
             {post.content.split("\n\n").map((para, idx) => {
-              // Simple markdown bold formatting check
               if (para.startsWith("1. ") || para.startsWith("2. ") || para.startsWith("3. ") || para.startsWith("4. ")) {
                 const parts = para.split("**: ");
                 if (parts.length > 1) {
@@ -120,32 +119,32 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           <div className="lg:col-span-4 bg-white border border-border-accent p-6 rounded-2xl shadow-sm space-y-6">
             <div>
               <span className="text-[9px] uppercase tracking-widest text-gold font-bold">
-                MGR DIRECT DESK
+                PRIME DIRECT DESK
               </span>
               <h3 className="text-sm font-bold text-text-main uppercase font-headings mt-1">
-                Consult With Our MD
+                Consult With Our Desk
               </h3>
               <p className="text-[11px] text-text-muted leading-relaxed mt-2 font-light">
-                Have specific layout preferences or investment queries? Reach out to our lead directors instantly.
+                Have specific layout preferences or investment queries? Reach out to our project directors directly.
               </p>
             </div>
             
             <div className="space-y-3 font-sans">
               <a
-                href="https://wa.me/917569664945?text=Hi%20MGR%20Constructions,%20I'm%20interested%20in%20a%20property%20consultation."
+                href={`https://wa.me/${COMPANY.phoneRaw}?text=Hi%20Prime%20Estates,%20I'm%20interested%20in%20a%20property%20consultation.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold tracking-widest uppercase text-center flex items-center justify-center gap-2 shadow-sm"
               >
                 <MessageSquare className="w-4 h-4" />
-                WhatsApp MD
+                WhatsApp Desk
               </a>
               <a
-                href="tel:+917569664945"
+                href={`tel:${COMPANY.phoneRaw}`}
                 className="w-full py-3.5 border border-border-accent hover:border-gold hover:text-gold text-text-main bg-primary/40 rounded-lg text-xs font-bold tracking-widest uppercase text-center flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 text-gold" />
-                Call Office
+                Call Support
               </a>
             </div>
           </div>

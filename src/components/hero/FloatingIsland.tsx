@@ -24,83 +24,174 @@ export default function FloatingIsland() {
     gsap.registerPlugin(ScrollTrigger);
 
     const element = containerRef.current;
-    if (element) {
-      // Clear existing ScrollTriggers to prevent leaks
-      ScrollTrigger.getAll().forEach(t => t.kill());
+    if (!element) return;
 
-      const tl = gsap.timeline({
+    // Clear existing ScrollTriggers to prevent leaks
+    ScrollTrigger.getAll().forEach(t => t.kill());
+
+    const mm = gsap.matchMedia();
+
+    // Desktop Viewports (>= 1024px)
+    mm.add("(min-width: 1024px)", () => {
+      gsap.set(element, { x: "18vw", scale: 0.9, opacity: 1 });
+
+      // 1. Hero -> About MGR
+      gsap.to(element, {
         scrollTrigger: {
-          trigger: "#main-scroll-track",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1, // Smooth scrolling scrub binding
-        }
+          trigger: "#about-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "18vw",
+        scale: 0.85,
+        opacity: 1,
+        ease: "power2.inOut",
       });
 
-      // GSAP Timeline coordinates the centerpiece positions across sections
-      tl.to(element, {
-        // Step 1: Hero to About MGR (shifts right, opens left for stats)
-        x: "15vw",
-        scale: 0.8,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 2: About to Why Choose MGR (shifts left for cards on right)
-        x: "-15vw",
-        scale: 0.85,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 3: Why Choose MGR to Construction Philosophy (shifts right for text on left)
-        x: "16vw",
-        scale: 0.8,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 4: Philosophy to Amenities (centers for floating modules)
-        x: "0vw",
-        scale: 0.72,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 5: Amenities to Location (centers, scales up, lines animate)
-        x: "0vw",
-        scale: 0.85,
-        rotation: 8,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 6: Location to Projects (centers, scales up backdrop)
-        x: "0vw",
-        scale: 1.1,
-        rotation: 0,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 7: Projects to Testimonials (orbit cards overlay)
-        x: "0vw",
-        scale: 0.9,
-        rotation: -4,
-        duration: 1,
-        ease: "power2.inOut"
-      })
-      .to(element, {
-        // Step 8: Testimonials to Contact (settles in center for action desk)
-        x: "0vw",
-        scale: 0.8,
-        rotation: 0,
-        duration: 1,
-        ease: "power2.inOut"
+      // 2. About -> Why Choose MGR
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#choose-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "-18vw",
+        scale: 0.65,
+        opacity: 0.25,
+        ease: "power2.inOut",
       });
-    }
+
+      // 3. Why Choose MGR -> Construction Philosophy
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#philosophy-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "18vw",
+        scale: 0.85,
+        opacity: 1,
+        ease: "power2.inOut",
+      });
+
+      // 4. Philosophy -> Amenities
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#amenities-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "0vw",
+        scale: 0.55,
+        opacity: 0.25,
+        ease: "power2.inOut",
+      });
+
+      // 5. Amenities -> Location
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#location-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "0vw",
+        scale: 0.85,
+        rotation: 6,
+        opacity: 1,
+        ease: "power2.inOut",
+      });
+
+      // 6. Location -> Projects (Hide COMPLETELY so project cards & text have 0 overlap and 0 lag)
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#projects-section",
+          start: "top bottom",
+          end: "top center",
+          scrub: 1,
+        },
+        x: "0vw",
+        scale: 0.4,
+        rotation: 0,
+        opacity: 0,
+        ease: "power2.inOut",
+      });
+
+      // 7. Projects -> Testimonials (Re-appear gracefully in orbit circle)
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#testimonials-section",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "0vw",
+        scale: 0.85,
+        rotation: -4,
+        opacity: 1,
+        ease: "power2.inOut",
+      });
+
+      // 8. Testimonials -> Contact
+      gsap.to(element, {
+        scrollTrigger: {
+          trigger: "#contact",
+          start: "top bottom",
+          end: "top top",
+          scrub: 1,
+        },
+        x: "0vw",
+        scale: 0.75,
+        rotation: 0,
+        opacity: 1,
+        ease: "power2.inOut",
+      });
+    });
+
+    // Mobile / Tablet Viewports (< 1024px)
+    mm.add("(max-width: 1023px)", () => {
+      gsap.set(element, { x: "0vw", y: "0vh", scale: 0.65, opacity: 0.85 });
+
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#about-section", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.55, opacity: 0.35, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#choose-section", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.5, opacity: 0.2, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#philosophy-section", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.55, opacity: 0.35, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#amenities-section", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.5, opacity: 0.2, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#location-section", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.7, opacity: 0.85, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#projects-section", start: "top bottom", end: "top center", scrub: 1 },
+        scale: 0.4, opacity: 0, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#testimonials-section", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.65, opacity: 0.75, ease: "power2.inOut"
+      });
+      gsap.to(element, {
+        scrollTrigger: { trigger: "#contact", start: "top bottom", end: "top top", scrub: 1 },
+        scale: 0.55, opacity: 0.4, ease: "power2.inOut"
+      });
+    });
 
     return () => {
+      mm.revert();
       ScrollTrigger.getAll().forEach(t => t.kill());
     };
   }, []);
@@ -150,10 +241,11 @@ export default function FloatingIsland() {
             className="relative w-[85%] sm:w-[75%] md:w-[65%] lg:w-[92%] xl:w-[85%] aspect-square flex items-center justify-center transform-gpu will-change-transform"
           >
             <Image
-              src="/uploads/hero/floating-island-3d.png"
-              alt="Luxury MGR Residential Floating Oasis"
+              src="/a9674561-d997-4bcf-86ad-eecbfd3afdbc.png"
+              alt="Luxury Prime Estates Residential Floating Oasis"
               fill
               priority
+              unoptimized
               sizes="(max-width: 640px) 85vw, (max-width: 1024px) 60vw, 660px"
               className="object-contain drop-shadow-[0_30px_60px_rgba(201,162,39,0.16)] select-none pointer-events-none filter transform-gpu"
             />

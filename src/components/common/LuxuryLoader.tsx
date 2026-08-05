@@ -37,7 +37,7 @@ export default function LuxuryLoader() {
           <div className="absolute inset-0 parallax-grid-bg opacity-30 pointer-events-none" />
           
           <div className="text-center flex flex-col items-center justify-center max-w-lg px-6 z-10">
-            {/* Logo Mark MGR */}
+            {/* Logo Mark Prime */}
             <motion.div
               initial={{ opacity: 0, y: 15, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -45,10 +45,10 @@ export default function LuxuryLoader() {
               className="flex flex-col items-center"
             >
               <h1 className="text-5xl md:text-6xl font-black tracking-[0.2em] text-text-main font-headings uppercase">
-                MGR
+                PRIME
               </h1>
               <span className="text-[10px] tracking-[0.4em] text-gold font-bold uppercase mt-2">
-                DEVELOPERS
+                ESTATES
               </span>
             </motion.div>
 
@@ -67,7 +67,7 @@ export default function LuxuryLoader() {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="text-xs md:text-sm tracking-widest text-text-muted uppercase font-light leading-relaxed text-center"
             >
-              Luxury Residences For Hyderabad Families
+              Architecting Luxury Residential Landmarks
             </motion.p>
           </div>
 
@@ -78,7 +78,7 @@ export default function LuxuryLoader() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="absolute bottom-12 text-[9px] tracking-widest text-text-muted uppercase font-mono"
           >
-            Est. 2011 • HMDA APPROVED PROPERTIES
+            Est. 2018 • RERA APPROVED DEVELOPMENTS
           </motion.div>
         </motion.div>
       )}

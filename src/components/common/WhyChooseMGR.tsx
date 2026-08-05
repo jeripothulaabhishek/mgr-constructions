@@ -17,7 +17,7 @@ export default function WhyChooseMGR() {
     },
     {
       title: "100% Legal Transparency",
-      desc: "All developments are fully HMDA approved, RERA registered, and verified for clear ownership titles to provide absolute peace of mind.",
+      desc: "All developments are fully approved, RERA registered, and verified for clear ownership titles to provide absolute peace of mind.",
       icon: Landmark,
     },
     {
@@ -27,12 +27,12 @@ export default function WhyChooseMGR() {
     },
     {
       title: "Premium Global Brands",
-      desc: "Equipped with luxury interior brands (such as Kohler, Legrand, premium teak wood, and multi-glazed soundproof glass) as standard finishes.",
+      desc: "Equipped with luxury interior brands (such as Kohler, Legrand, premium timber wood, and multi-glazed soundproof glass) as standard finishes.",
       icon: Award,
     },
     {
-      title: "Direct Owner Engagement",
-      desc: "MGR stands for trust. We offer direct builder accessibility, regular construction updates, and proactive post-delivery care.",
+      title: "Direct Builder Accessibility",
+      desc: "Prime Estates stands for trust. We offer direct developer accessibility, regular construction updates, and proactive post-delivery care.",
       icon: HeartHandshake,
     },
   ];
@@ -50,10 +50,10 @@ export default function WhyChooseMGR() {
             A Legacy of Trust
           </span>
           <h2 className="luxury-title text-text-main mt-3 font-headings uppercase">
-            Why MGR Constructions
+            Why Prime Estates
           </h2>
           <p className="luxury-paragraph text-text-muted mt-4 font-light">
-            Our construction philosophy is built on absolute transparency, architectural mastery, and structural reliability.
+            Our development philosophy is built on absolute transparency, architectural mastery, and structural reliability.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function WhyChooseMGR() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="p-6 glass-card rounded-2xl flex flex-col space-y-4 text-left group"
+              className="p-6 bg-white/85 backdrop-blur-md glass-card rounded-2xl flex flex-col space-y-4 text-left group"
             >
               <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold group-hover:scale-105 transition-transform duration-300">
                 <card.icon className="w-5 h-5" />

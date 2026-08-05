@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowLeft, Shield } from "lucide-react";
+import { COMPANY } from "@/config/company";
 
 export const metadata = {
-  title: "Privacy Policy | MGR Constructions Hyderabad",
-  description: "Learn about how MGR Constructions Private Limited collects, stores, and handles landowner inquiries and home buyer leads.",
+  title: "Privacy Policy | Prime Estates",
+  description: "Learn about how Prime Estates Private Limited collects, stores, and handles landowner inquiries and home buyer leads.",
 };
 
 export default function PrivacyPage() {
@@ -36,7 +37,7 @@ export default function PrivacyPage() {
         {/* Legal Text */}
         <div className="space-y-6 text-sm text-text-muted font-light leading-relaxed">
           <p>
-            At <strong>MGR Constructions Private Limited</strong>, accessible from <Link href="/" className="text-gold underline">mgrconstructions.in</Link>, one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of information we collect and record, and how we use it.
+            At <strong>{COMPANY.legalName}</strong>, accessible from <Link href="/" className="text-gold underline">primeestates.com</Link>, one of our main priorities is the privacy of our visitors. This Privacy Policy document outlines the types of information we collect and record, and how we use it.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
@@ -67,7 +68,6 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-5 space-y-2">
             <li>Processing cost estimates and routing leads to customer support desk.</li>
             <li>Registering site inspections and coordinating joint development agreements.</li>
-            <li>Logging entries inside secure Google Sheets for corporate backup.</li>
             <li>Dispatches of welcome alerts and newsletters.</li>
           </ul>
 
@@ -75,14 +75,14 @@ export default function PrivacyPage() {
             4. Security of Data
           </h3>
           <p>
-            We enforce Secure Sockets Layer (SSL) transmission boundaries and employ Cloudflare Turnstile token checks to prevent bot spam. We do not distribute, lease, or sell contact listings to secondary advertising networks.
+            We enforce Secure Sockets Layer (SSL) transmission boundaries and employ security checks to prevent bot spam. We do not distribute, lease, or sell contact listings to secondary advertising networks.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             5. Contact Information
           </h3>
           <p>
-            If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <a href="mailto:info@mgrconstructions.in" className="text-gold underline">info@mgrconstructions.in</a>.
+            If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <a href={`mailto:${COMPANY.email}`} className="text-gold underline">{COMPANY.email}</a>.
           </p>
         </div>
 

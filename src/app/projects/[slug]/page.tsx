@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   if (!project) return {};
 
   return {
-    title: `${project.title} | Luxury Homes in ${project.location.split(",")[0]} | MGR Developers`,
+    title: `${project.title} | Luxury Homes in ${project.location.split(",")[0]} | Prime Estates`,
     description: project.shortDescription,
     openGraph: {
       title: project.title,
@@ -66,7 +66,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             Back to Projects
           </Link>
           <span className="text-[10px] uppercase font-bold tracking-widest text-text-muted/40">
-            MGR Project details
+            Project Details
           </span>
         </div>
 

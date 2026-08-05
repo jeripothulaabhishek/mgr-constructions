@@ -1,8 +1,8 @@
 import BlogList from "@/components/blog/BlogList";
 
 export const metadata = {
-  title: "Engineering Blog | Real Estate Trends & Vastu Guides Hyderabad",
-  description: "Read technical guides on home building standards, material audits, and vastu tips for flats in Manikonda by MGR Developers.",
+  title: "Engineering Blog | Real Estate Insights & Vastu Guides",
+  description: "Read technical guides on home building standards, material audits, and Vastu principles by Prime Estates.",
 };
 
 export default function BlogPage() {
@@ -18,7 +18,7 @@ export default function BlogPage() {
             Engineering Logs
           </h1>
           <p className="text-sm text-text-muted leading-relaxed mt-2 font-light">
-            Stay informed with expert insights on Vastu shastra layouts, structural safety codes, and cost estimations in Hyderabad.
+            Stay informed with expert insights on Vastu Shastra layouts, structural safety codes, and cost estimations.
           </p>
         </div>
 

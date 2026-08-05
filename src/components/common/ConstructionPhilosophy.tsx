@@ -17,7 +17,7 @@ export default function ConstructionPhilosophy() {
     },
     {
       title: "Structural Integrity",
-      desc: "Built using certified high-strength Fe550 steel, custom RCC frameworks, and earthquake-resistant designs.",
+      desc: "Built using certified high-strength steel, custom RCC frameworks, and earthquake-resistant designs.",
       icon: Shield,
     },
     {
@@ -27,7 +27,7 @@ export default function ConstructionPhilosophy() {
     },
     {
       title: "Long-Term Value Appreciation",
-      desc: "Located in premium West Hyderabad growth corridors, securing solid wealth creation and asset value growth.",
+      desc: "Located in prime growth corridors, securing solid wealth creation and asset value growth.",
       icon: TrendingUp,
     },
   ];
@@ -53,7 +53,7 @@ export default function ConstructionPhilosophy() {
               Architectural Standard
             </span>
             <h2 className="luxury-title text-text-main font-headings uppercase leading-none tracking-tight">
-              The MGR Way
+              The Prime Standard
             </h2>
             <p className="luxury-paragraph text-text-muted font-light mt-4 max-w-xl">
               We design homes around human biology, family dynamics, and structural reliability. Our architectural choices optimize space, environment, and investment security.

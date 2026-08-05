@@ -121,7 +121,7 @@ export default function JointVenture() {
               Unlock Maximum Plot Valuations
             </h2>
             <p className="text-sm text-text-muted leading-relaxed font-light mt-2 max-w-xl">
-              Partner with MGR to transform your clear-titled prime plots into premium residential complexes. We fully finance, construct, and manage approvals and sales, securing optimal equity and area-sharing terms for you.
+              Partner with Prime Estates to transform your clear-titled prime plots into premium residential complexes. We fully finance, construct, and manage approvals and sales, securing optimal equity and area-sharing terms for you.
             </p>
           </div>
 
@@ -156,7 +156,7 @@ export default function JointVenture() {
               >
                 <span className="text-3xl font-black text-text-main font-headings leading-none">50%</span>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-text-main mt-2 block">Developer Share</span>
-                <span className="text-[9px] text-text-muted mt-1 leading-normal font-light">MGR finances 100% of construction & clearances.</span>
+                <span className="text-[9px] text-text-muted mt-1 leading-normal font-light">Prime Estates finances 100% of construction & clearances.</span>
               </motion.div>
             </div>
 
@@ -256,7 +256,7 @@ export default function JointVenture() {
                     <input
                       type="text"
                       id="jv-location"
-                      placeholder="e.g., Manikonda, Tarnaka"
+                      placeholder="e.g., Financial District, Green Valley"
                       {...register("location")}
                       className="w-full px-4 py-3 bg-white border border-border-accent rounded-lg text-text-main focus:outline-none focus:border-gold transition-colors"
                     />

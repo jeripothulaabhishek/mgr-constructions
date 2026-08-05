@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowLeft, AlertTriangle } from "lucide-react";
+import { COMPANY } from "@/config/company";
 
 export const metadata = {
-  title: "Disclaimer | MGR Constructions Hyderabad",
-  description: "RERA disclaimers and material estimation variance notices for MGR Constructions properties and layout visualizations.",
+  title: "Disclaimer | Prime Estates",
+  description: "RERA disclaimers and material estimation variance notices for Prime Estates properties and layout visualizations.",
 };
 
 export default function DisclaimerPage() {
@@ -36,7 +37,7 @@ export default function DisclaimerPage() {
         {/* Legal Text */}
         <div className="space-y-6 text-sm text-text-muted font-light leading-relaxed">
           <p>
-            The information contained on this website (<Link href="/" className="text-gold underline">mgrconstructions.in</Link>) is for general guidance on matters of interest only. Even if MGR Constructions takes every precaution to ensure that the content of the website is both current and accurate, errors can occur.
+            The information contained on this website (<Link href="/" className="text-gold underline">primeestates.com</Link>) is for general guidance on matters of interest only. Even if {COMPANY.name} takes every precaution to ensure that the content of the website is both current and accurate, errors can occur.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
@@ -50,21 +51,21 @@ export default function DisclaimerPage() {
             2. Material Costs & Estimates Disclaimer
           </h3>
           <p>
-            The calculations, pricing shares, and component budgets compiled by our **Cost Calculator** tool are generated using local benchmark standards in Hyderabad. These parameters are subject to variance and fluctuations in structural materials markets (cement, sand, aggregates, and reinforcing steel brands). They should be treated as preliminary budgeting guides, not binding contracting figures.
+            The calculations, pricing shares, and component budgets compiled by our **Cost Calculator** tool are generated using local benchmark standards. These parameters are subject to variance and fluctuations in structural materials markets (cement, sand, aggregates, and reinforcing steel brands). They should be treated as preliminary budgeting guides, not binding contracting figures.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             3. Legal RERA & Approval Disclaimer
           </h3>
           <p>
-            Specific layouts, flat configurations, and amenities details represent active ongoing clearances. Final sale deeds and Joint Development Agreements will be governed strictly by written bilateral JDA contracts and TS-RERA clearances registered for individual plots.
+            Specific layouts, flat configurations, and amenities details represent active ongoing clearances. Final sale deeds and Joint Development Agreements will be governed strictly by written bilateral contracts and RERA clearances registered for individual plots.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             4. Contact and Feedback
           </h3>
           <p>
-            For any queries or concerns regarding this Disclaimer, please write to us at <a href="mailto:info@mgrconstructions.in" className="text-gold underline">info@mgrconstructions.in</a>.
+            For any queries or concerns regarding this Disclaimer, please write to us at <a href={`mailto:${COMPANY.email}`} className="text-gold underline">{COMPANY.email}</a>.
           </p>
         </div>
 

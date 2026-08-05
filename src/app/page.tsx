@@ -25,10 +25,10 @@ export default function Home() {
         {/* Section 1: Floating Island Hero */}
         <Hero />
 
-        {/* Section 2: About MGR (Brand Story) */}
+        {/* Section 2: About Prime Estates (Brand Story) */}
         <AboutSection />
 
-        {/* Section 3: Why Choose MGR (Trust Cards) */}
+        {/* Section 3: Why Choose Prime Estates (Trust Cards) */}
         <WhyChooseMGR />
 
         {/* Section 4: Construction Philosophy (Architectural Standard) */}

@@ -8,6 +8,7 @@ import CalendlyModal from "@/components/forms/CalendlyModal";
 import CostGuideModal from "@/components/forms/CostGuideModal";
 import CostCalculatorModal from "@/components/forms/CostCalculatorModal";
 import { SEO_CONFIG } from "@/config/seo";
+import { CONTACT_CONFIG } from "@/config/contact";
 import Script from "next/script";
 
 const inter = Inter({
@@ -69,7 +70,7 @@ export default function RootLayout({
 
         {/* Always-visible Sticky WhatsApp Launcher (Bottom-Left) */}
         <a
-          href="https://wa.me/917569664945?text=Hi%20MGR%20Constructions,%20I'm%20interested%20in%20a%20property%20consultation."
+          href={CONTACT_CONFIG.whatsapp.url}
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 left-6 z-40 w-12 h-12 bg-[#25d366] hover:bg-[#20ba5a] text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"

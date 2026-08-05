@@ -1,7 +1,7 @@
 export const SOCIALS = {
-  facebook: "https://facebook.com/mgrconstructions.hyd",
-  instagram: "https://instagram.com/mgrconstructions",
-  linkedin: "https://linkedin.com/company/mgr-constructions",
-  youtube: "https://youtube.com/c/mgrconstructions",
-  twitter: "https://twitter.com/mgr_constructions",
+  facebook: "https://facebook.com/primeestates",
+  instagram: "https://instagram.com/primeestates",
+  linkedin: "https://linkedin.com/company/prime-estates",
+  youtube: "https://youtube.com/c/primeestates",
+  twitter: "https://twitter.com/primeestates",
 };

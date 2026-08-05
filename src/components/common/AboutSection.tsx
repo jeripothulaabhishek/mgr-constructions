@@ -7,7 +7,7 @@ export default function AboutSection() {
     {
       value: "15+",
       label: "YEARS",
-      desc: "Of structural legacy and crafting residential spaces.",
+      desc: "Of architectural legacy and crafting residential spaces.",
     },
     {
       value: "500+",
@@ -15,14 +15,14 @@ export default function AboutSection() {
       desc: "Whose trust and lifestyle aspirations we support.",
     },
     {
-      value: "20+",
+      value: "35+",
       label: "PROJECTS",
-      desc: "Delivered on schedule across West Hyderabad.",
+      desc: "Delivered on schedule across prime growth corridors.",
     },
     {
-      value: "100%",
-      label: "TRUST",
-      desc: "Absolute HMDA approvals and clear legal titles.",
+      value: "98%",
+      label: "SATISFACTION",
+      desc: "Verified customer approval and clear legal titles.",
     },
   ];
 
@@ -47,10 +47,10 @@ export default function AboutSection() {
               Generational Developer
             </span>
             <h2 className="luxury-title text-text-main font-headings uppercase leading-none tracking-tight">
-              Building Legacy Homes<br />For Hyderabad
+              Building Legacy Homes<br />For Modern Living
             </h2>
             <p className="luxury-paragraph text-text-muted leading-relaxed font-light mt-4 max-w-xl">
-              At MGR Constructions, we build premium family sanctuaries. Under the leadership of M. Gopal Reddy, we blend architectural principles with premium craftsmanship to create residences that appreciate across generations.
+              At Prime Estates, we construct luxury family sanctuaries. We blend timeless architectural principles with premium engineering to create residences that appreciate across generations.
             </p>
           </motion.div>
 

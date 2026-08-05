@@ -1,8 +1,9 @@
 import Link from "next/link";
 import { ArrowLeft, MessageSquare } from "lucide-react";
+import { COMPANY } from "@/config/company";
 
 export const metadata = {
-  title: "Contact & Communication Policy | MGR Constructions Hyderabad",
+  title: "Contact & Communication Policy | Prime Estates",
   description: "Learn about our communication consent terms, opt-in details, and opt-out channels for emails, calls, and WhatsApp notifications.",
 };
 
@@ -36,14 +37,14 @@ export default function ContactPolicyPage() {
         {/* Legal Text */}
         <div className="space-y-6 text-sm text-text-muted font-light leading-relaxed">
           <p>
-            At <strong>MGR Constructions Private Limited</strong>, we value transparent and respectful client relationships. This Communication and Contact Policy defines the parameters under which we connect with visitors who submit their details to our lead portal.
+            At <strong>{COMPANY.legalName}</strong>, we value transparent and respectful client relationships. This Communication and Contact Policy defines the parameters under which we connect with visitors who submit their details to our lead portal.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             1. Consent to Contact & Opt-In
           </h3>
           <p>
-            By submitting your name, email, and Indian telephone number across our forms (Contact, Cost Calculator, JV Consultation, Gated brochure download, or Newsletter subscription), you explicitly grant <strong>MGR Constructions</strong> and its authorized customer support team permission to contact you.
+            By submitting your name, email, and telephone number across our forms (Contact, Cost Calculator, JV Consultation, Gated brochure download, or Newsletter subscription), you explicitly grant <strong>{COMPANY.name}</strong> and its authorized customer support team permission to contact you.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
@@ -69,10 +70,10 @@ export default function ContactPolicyPage() {
             4. Opt-Out & Do Not Disturb (DND)
           </h3>
           <p>
-            You retain full control over your subscription preferences. If you wish to cease receiving communication from MGR:
+            You retain full control over your subscription preferences. If you wish to cease receiving communication from {COMPANY.name}:
           </p>
           <ul className="list-disc pl-5 space-y-2">
-            <li>Email "UNSUBSCRIBE" to <a href="mailto:info@mgrconstructions.in" className="text-gold underline">info@mgrconstructions.in</a>.</li>
+            <li>Email "UNSUBSCRIBE" to <a href={`mailto:${COMPANY.email}`} className="text-gold underline">{COMPANY.email}</a>.</li>
             <li>Reply "STOP" to any WhatsApp communication sent by our team.</li>
             <li>Request our support consultant during any phone call to flag your record in our database as "Do Not Call".</li>
           </ul>

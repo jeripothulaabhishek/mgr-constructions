@@ -18,7 +18,7 @@ export const SERVICES: Service[] = [
     title: "Turnkey Home Delivery",
     description: "Comprehensive end-to-end design, government approvals, and construction services managed entirely by our team from excavation to key handover.",
     features: [
-      "Hassle-free approvals (TS-bPASS)",
+      "Hassle-free statutory approvals",
       "Fixed budget agreements",
       "Rigorous quality inspections",
       "Comprehensive structural warranty",
@@ -52,7 +52,7 @@ export const SERVICES: Service[] = [
   {
     id: "joint-ventures",
     title: "Landowner Joint Ventures",
-    description: "Partner with MGR to transform your land into an elegant residential landmark under standard transparent area-sharing metrics.",
+    description: "Partner with Prime Estates to transform your land into an elegant residential landmark under standard transparent area-sharing metrics.",
     features: [
       "Premium area-sharing metrics",
       "Transparent legal documentation",

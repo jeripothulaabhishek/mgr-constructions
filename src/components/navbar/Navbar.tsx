@@ -80,10 +80,10 @@ export default function Navbar() {
         {/* Brand Logo */}
         <Link href="/" className="flex flex-col group text-left transition-transform duration-300 hover:scale-102">
           <span className="text-xl md:text-2xl font-bold tracking-wider text-text-main uppercase font-headings">
-            MGR
+            PRIME
           </span>
           <span className="text-[9px] uppercase tracking-widest text-gold font-sans font-bold group-hover:text-text-main transition-colors">
-            DEVELOPERS
+            ESTATES
           </span>
         </Link>
 

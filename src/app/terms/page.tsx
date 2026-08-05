@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ArrowLeft, FileText } from "lucide-react";
+import { COMPANY } from "@/config/company";
 
 export const metadata = {
-  title: "Terms of Service | MGR Constructions Hyderabad",
-  description: "Read the terms of service, architectural copyright notices, and website usage policies of MGR Constructions.",
+  title: "Terms of Service | Prime Estates",
+  description: "Read the terms of service, architectural copyright notices, and website usage policies of Prime Estates.",
 };
 
 export default function TermsPage() {
@@ -36,35 +37,35 @@ export default function TermsPage() {
         {/* Legal Text */}
         <div className="space-y-6 text-sm text-text-muted font-light leading-relaxed">
           <p>
-            Welcome to <strong>MGR Constructions</strong>. These terms and conditions outline the rules and regulations for the use of MGR Constructions Private Limited's Website, located at <Link href="/" className="text-gold underline">mgrconstructions.in</Link>.
+            Welcome to <strong>{COMPANY.name}</strong>. These terms and conditions outline the rules and regulations for the use of {COMPANY.legalName}'s Website, located at <Link href="/" className="text-gold underline">primeestates.com</Link>.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             1. Intellectual Property Rights
           </h3>
           <p>
-            Other than the content you own, under these Terms, MGR Constructions Private Limited and/or its licensors own all the intellectual property rights and materials contained in this Website. All rights are reserved. You are granted limited license only for purposes of viewing the material contained on this Website.
+            Other than the content you own, under these Terms, {COMPANY.legalName} and/or its licensors own all the intellectual property rights and materials contained in this Website. All rights are reserved. You are granted limited license only for purposes of viewing the material contained on this Website.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             2. Material Spec Caveats & Calculations
           </h3>
           <p>
-            The estimation values, dimensions, budget allocations, and material outputs compiled using the <strong>Cost Estimator</strong> are designed to act as preliminary guidelines. They do not represent firm contractual building prices. Final execution quotes will vary depending on municipal clearance fees, soil bearing capacities, structural design sheets, and fluctuations in steel and cement markets.
+            The estimation values, dimensions, budget allocations, and material outputs compiled using the <strong>Cost Estimator</strong> are designed to act as preliminary guidelines. They do not represent firm contractual building prices. Final execution quotes will vary depending on municipal clearance fees, soil bearing capacities, structural design sheets, and material market fluctuations.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
-            3. RERA and HMDA Clearances
+            3. RERA and Municipal Clearances
           </h3>
           <p>
-            MGR Constructions undertakes to register all eligible residential projects under the Telangana Real Estate Regulatory Authority (RERA) and municipal bodies (HMDA/GHMC). All flat dimensions, floor plate layouts, and handover timelines published on specific project showcase listings correspond to structural blueprints submitted for clearance approvals.
+            {COMPANY.name} undertakes to register all eligible residential projects under relevant Real Estate Regulatory Authority (RERA) and municipal bodies. All flat dimensions, floor plate layouts, and handover timelines published on specific project showcase listings correspond to structural blueprints submitted for clearance approvals.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">
             4. Limitation of Liability
           </h3>
           <p>
-            In no event shall MGR Constructions Private Limited, nor any of its officers, directors, and employees, be held liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract. MGR Constructions Private Limited, including its officers, directors, and employees shall not be held liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this Website.
+            In no event shall {COMPANY.legalName}, nor any of its officers, directors, and employees, be held liable for anything arising out of or in any way connected with your use of this Website whether such liability is under contract. {COMPANY.legalName}, including its officers, directors, and employees shall not be held liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this Website.
           </p>
         </div>
 

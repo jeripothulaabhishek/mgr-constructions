@@ -96,14 +96,14 @@ export default function Footer() {
         <div className="flex flex-col space-y-5 text-left">
           <Link href="/" className="flex flex-col w-max">
             <span className="text-2xl font-bold tracking-wider text-text-main uppercase font-headings">
-              MGR
+              PRIME
             </span>
             <span className="text-[10px] uppercase tracking-widest text-gold font-sans font-bold">
-              DEVELOPERS
+              ESTATES
             </span>
           </Link>
           <p className="text-xs leading-relaxed text-text-muted">
-            {COMPANY.tagline}. Crafting landmark, Vastu-compliant luxury residential spaces in Manikonda, Tarnaka, and premium neighborhoods of Hyderabad.
+            {COMPANY.tagline}. Crafting landmark, Vastu-compliant luxury residential spaces across prime urban corridors.
           </p>
           <div className="flex items-center space-x-3">
             {Object.entries(SOCIALS).map(([key, url]) => (

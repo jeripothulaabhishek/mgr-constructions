@@ -3,8 +3,8 @@ import { Compass, MapPin, ChevronRight } from "lucide-react";
 import { PROJECTS } from "@/content/projects";
 
 export const metadata = {
-  title: "Projects Portfolio | Luxury Residential Properties Hyderabad",
-  description: "Browse MGR Developers' signature residential properties portfolio including Manikonda Residences and Tarnaka Platinum Enclave.",
+  title: "Projects Portfolio | Luxury Residential Properties",
+  description: "Browse Prime Estates' signature residential properties portfolio including Skyline Heights and Golden Horizon.",
 };
 
 export default function ProjectsPage() {
@@ -30,13 +30,13 @@ export default function ProjectsPage() {
         {/* Header Title */}
         <div className="text-left max-w-2xl">
           <span className="text-[10px] uppercase font-bold tracking-widest text-gold block">
-            MGR DEVELOPERS
+            PRIME ESTATES
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold font-headings uppercase text-text-main mt-3">
             Real Estate Portfolio
           </h1>
           <p className="text-sm text-text-muted leading-relaxed mt-2 font-light">
-            Browse our HMDA approved gated apartments and turnkey custom homes engineered for family safety and luxurious spatial design.
+            Browse our approved gated residences and turnkey custom homes engineered for family safety and luxury spatial design.
           </p>
         </div>
 

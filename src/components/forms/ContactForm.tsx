@@ -243,7 +243,7 @@ export default function ContactForm() {
                     <input
                       type="text"
                       id="contact-name"
-                      placeholder="e.g., Gopal Reddy"
+                      placeholder="e.g., Rahul Sharma"
                       {...register("name")}
                       className="w-full px-4 py-3 bg-white/50 border border-border-accent/80 rounded-lg text-text-main focus:outline-none focus:border-gold focus:bg-white/80 transition-all duration-300"
                     />
@@ -404,7 +404,7 @@ export default function ContactForm() {
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                title="MGR Office Location Map"
+                title="Prime Estates Corporate Office Location Map"
               />
             </div>
           </div>

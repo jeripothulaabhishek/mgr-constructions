@@ -280,10 +280,11 @@ export default function FloatingIslandCenterpiece() {
             <div className="absolute bottom-[22%] w-[42%] h-[5%] bg-black rounded-full pointer-events-none animate-[shadow-breathe_7s_ease-in-out_infinite]" />
 
             <Image
-              src="/uploads/hero/floating-island.webp"
-              alt="Luxury Residential Ecosystem Centerpiece - MGR Constructions"
+              src="/a9674561-d997-4bcf-86ad-eecbfd3afdbc.png"
+              alt="Luxury Residential Ecosystem Centerpiece - Prime Estates"
               fill
               priority
+              unoptimized
               className="object-contain drop-shadow-[0_35px_50px_rgba(201,162,39,0.18)] filter"
             />
           </div>

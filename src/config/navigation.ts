@@ -9,24 +9,24 @@ export const MAIN_NAV: NavLink[] = [
     label: "Residences",
     href: "/projects",
     children: [
-      { label: "Featured Projects", href: "/projects", description: "Explore our premium luxury spaces." },
-      { label: "Manikonda Residences", href: "/projects/manikonda-residences", description: "HMDA-approved luxury 3BHKs." },
-      { label: "Platinum Enclave", href: "/projects/platinum-enclave", description: "Ultra-luxury premium towers." },
+      { label: "Featured Developments", href: "/projects", description: "Explore our luxury residential portfolio." },
+      { label: "Skyline Heights", href: "/projects/skyline-heights", description: "Ultra-luxury 3BHK gated residences." },
+      { label: "Golden Horizon", href: "/projects/golden-horizon", description: "Elite architectural sanctuary towers." },
     ],
   },
   { label: "Locations", href: "/#location-section" },
   { label: "Joint Ventures", href: "/jv" },
-  { label: "About MGR", href: "/about" },
+  { label: "About Us", href: "/about" },
   { label: "Insights", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
 
 export const FOOTER_QUICK_LINKS = [
-  { label: "About MGR", href: "/about" },
-  { label: "Our Services", href: "/services" },
+  { label: "About Prime Estates", href: "/about" },
+  { label: "Development Services", href: "/services" },
   { label: "Joint Ventures", href: "/jv" },
-  { label: "Recent Projects", href: "/projects" },
-  { label: "Company Blogs", href: "/blog" },
+  { label: "Featured Projects", href: "/projects" },
+  { label: "Industry Insights", href: "/blog" },
 ];
 
 export const FOOTER_LEGAL_LINKS = [

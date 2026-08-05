@@ -2,11 +2,11 @@ import { Project } from "@/types";
 
 export const PROJECTS: Project[] = [
   {
-    slug: "manikonda-residences",
-    title: "MGR Manikonda Residences",
-    shortDescription: "Bespoke luxury 3BHK family homes built for modern lifestyles, located in the serene residential heart of Manikonda.",
-    description: "MGR Manikonda Residences is designed to be your family's personal sanctuary. Featuring wide cross-ventilated balconies, Vastu-compliant entry orientations, sun-lit family lounges, and premium teak finishes, this low-density development offers a peaceful retreat with immediate accessibility to West Hyderabad's IT corridor.",
-    location: "Manikonda, Hyderabad",
+    slug: "skyline-heights",
+    title: "Skyline Heights",
+    shortDescription: "Bespoke luxury 3BHK family residences designed for contemporary living in the heart of the Financial District.",
+    description: "Skyline Heights represents the pinnacle of modern architectural design. Featuring expansive cross-ventilated balconies, Vastu-compliant layouts, sun-lit family lounges, and ultra-premium timber finishes, this exclusive low-density sanctuary delivers unmatched tranquility with immediate access to prime commercial corridors.",
+    location: "Financial District, Hyderabad",
     status: "Ongoing",
     progressPercent: 75,
     specs: {
@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
       units: 25,
       floors: "5 Residential Floors",
       type: "Vastu-Compliant 3BHK Homes",
-      approval: "HMDA & RERA Approved",
+      approval: "RERA Approved & Certified",
     },
     amenities: [
       "Lush Rooftop Landscaped Garden",
@@ -27,11 +27,11 @@ export const PROJECTS: Project[] = [
       "Intercom Facility",
     ],
     landmarks: [
-      { name: "Lanco Hills Road", distance: "3 mins" },
-      { name: "Delhi Public School", distance: "5 mins" },
-      { name: "Continental Hospital", distance: "10 mins" },
-      { name: "Hitec City & IKEA", distance: "12 mins" },
-      { name: "Financial District", distance: "15 mins" },
+      { name: "Commercial District Expressway", distance: "3 mins" },
+      { name: "International Academy", distance: "5 mins" },
+      { name: "Super-Specialty Medical Hub", distance: "10 mins" },
+      { name: "Retail & Dining Galleria", distance: "12 mins" },
+      { name: "Financial Hub Center", distance: "15 mins" },
     ],
     images: {
       exterior: "/uploads/projects/manikonda-residences/exterior.png",
@@ -39,14 +39,14 @@ export const PROJECTS: Project[] = [
       floorPlan: "/uploads/projects/manikonda-residences/floorplan.webp",
       amenities: "/uploads/projects/manikonda-residences/amenity.webp",
     },
-    brochureUrl: "/brochures/manikonda-residences.pdf",
+    brochureUrl: "/brochures/skyline-heights.pdf",
   },
   {
-    slug: "platinum-enclave",
-    title: "MGR Platinum Enclave",
-    shortDescription: "Ultra-luxury gated community residences matching elite contemporary architectural design standards.",
-    description: "Designed for families who settle for nothing less than absolute perfection, MGR Platinum Enclave in Tarnaka represents a legacy of refined living. These limited-edition homes feature expansive floor plates, soundproof windows, private foyer entrances, and premium Kohler bath finishes.",
-    location: "Tarnaka, Hyderabad",
+    slug: "golden-horizon",
+    title: "Golden Horizon",
+    shortDescription: "Ultra-luxury gated enclave matching contemporary international architectural design standards.",
+    description: "Designed for discerning families who demand absolute refinement, Golden Horizon in Green Valley embodies a legacy of timeless elegance. These limited-edition residences feature expansive floor plates, acoustic soundproof glazing, private foyer entrances, and luxury designer bath fittings.",
+    location: "Green Valley, Hyderabad",
     status: "Launching",
     progressPercent: 15,
     specs: {
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
       units: 15,
       floors: "Exclusive 5-Story Block",
       type: "Luxury 3BHK & 4BHK Residences",
-      approval: "HMDA Approved",
+      approval: "Fully Approved Layout",
     },
     amenities: [
       "Rooftop Infinity Lounge",
@@ -63,14 +63,14 @@ export const PROJECTS: Project[] = [
       "Solar-Fenced Boundary",
       "VRF Air Conditioning Pre-wiring",
       "Acoustic Glass Windows",
-      "Kids Sand Pit & Activity Deck",
+      "Kids Activity Deck",
       "Automated Gate Entry System",
     ],
     landmarks: [
-      { name: "Osmania Metro Station", distance: "4 mins" },
-      { name: "Tarnaka Junction", distance: "5 mins" },
-      { name: "Secunderabad Club", distance: "10 mins" },
-      { name: "Secunderabad Station", distance: "12 mins" },
+      { name: "Central Transit Hub", distance: "4 mins" },
+      { name: "Green Valley Plaza", distance: "5 mins" },
+      { name: "Golf & Country Club", distance: "10 mins" },
+      { name: "Main Terminal Station", distance: "12 mins" },
     ],
     images: {
       exterior: "/uploads/projects/platinum-enclave/exterior.png",
@@ -78,6 +78,6 @@ export const PROJECTS: Project[] = [
       floorPlan: "/uploads/projects/platinum-enclave/floorplan.webp",
       amenities: "/uploads/projects/platinum-enclave/amenity.webp",
     },
-    brochureUrl: "/brochures/platinum-enclave.pdf",
+    brochureUrl: "/brochures/golden-horizon.pdf",
   },
 ];

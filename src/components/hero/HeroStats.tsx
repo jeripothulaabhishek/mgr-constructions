@@ -12,8 +12,8 @@ interface StatItem {
 const STATS_DATA: StatItem[] = [
   { icon: Award, value: "15+ Years", label: "Legacy of Trust" },
   { icon: Users, value: "500+", label: "Happy Families" },
-  { icon: Shield, value: "HMDA & RERA", label: "Approved Layouts" },
-  { icon: Star, value: "4.9 ★ Rating", label: "Google Verified" },
+  { icon: Shield, value: "35+ Projects", label: "Delivered" },
+  { icon: Star, value: "98%", label: "Satisfaction" },
 ];
 
 export default function HeroStats() {

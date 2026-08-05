@@ -5,11 +5,11 @@ import { PROJECTS } from "@/content/projects";
 import JointVenture from "@/components/jv/JointVenture";
 
 const LOCATIONS = [
-  "flats-in-manikonda",
-  "flats-in-tarnaka",
-  "hmda-approved-apartments",
-  "luxury-3bhk-hyderabad",
-  "joint-venture-builders-hyderabad",
+  "flats-in-financial-district",
+  "flats-in-green-valley",
+  "certified-approved-apartments",
+  "luxury-3bhk-residences",
+  "joint-venture-partnerships",
 ];
 
 interface LocationPageProps {
@@ -39,58 +39,58 @@ export async function generateMetadata({ params }: LocationPageProps) {
 
 function getPageDetails(slug: string) {
   switch (slug) {
-    case "flats-in-manikonda":
+    case "flats-in-financial-district":
       return {
-        seoTitle: "Luxury 3BHK Flats in Manikonda | MGR Developers",
-        seoDescription: "Explore premium HMDA-approved luxury 3BHK apartments for sale in Manikonda, Hyderabad. Quality construction, modern amenities, Vastu-compliant layouts.",
-        heading: "Premium Flats in Manikonda",
-        badge: "West Hyderabad IT Hub Corridor",
-        tagline: "Live close to the Financial District and Hitec City in our luxury 3BHK gated residences.",
-        content: "Manikonda is one of West Hyderabad's most sought-after residential hubs. Driven by proximity to IT centers (Kokapet SEZ, Gachibowli), top international schools, and retail corridors, our Manikonda Residences offer unmatched capital appreciation and luxury lifestyle.",
-        projectSlug: "manikonda-residences",
+        seoTitle: "Luxury 3BHK Flats in Financial District | Prime Estates",
+        seoDescription: "Explore premium approved luxury 3BHK residences for sale in Financial District. Quality construction, modern amenities, Vastu-compliant layouts.",
+        heading: "Flats in Financial District",
+        badge: "Central Business Corridor",
+        tagline: "Live close to major commercial hubs in our luxury 3BHK gated residences.",
+        content: "Financial District is a premier residential hub. Driven by proximity to corporate headquarters, top international academies, and retail centers, Skyline Heights offers capital appreciation and a luxury lifestyle.",
+        projectSlug: "skyline-heights",
         showJv: false,
       };
-    case "flats-in-tarnaka":
+    case "flats-in-green-valley":
       return {
-        seoTitle: "Super Luxury Apartments in Tarnaka | MGR Developers",
-        seoDescription: "Luxury gated community apartments for sale in Tarnaka, Secunderabad. Modern architecture, double parking, near Osmania Metro. HMDA approved.",
-        heading: "Premium Apartments in Tarnaka",
-        badge: "Secunderabad Connectivity Zone",
-        tagline: "Elegant contemporary residences built for modern families in elite residential zones of Secunderabad.",
-        content: "Tarnaka remains the cultural and academic heart of East Hyderabad. Offering smooth metro connectivity to Gachibowli and close proximity to Secunderabad railway terminal, our Platinum Enclave provides premium living with low-density privacy.",
-        projectSlug: "platinum-enclave",
+        seoTitle: "Super Luxury Apartments in Green Valley | Prime Estates",
+        seoDescription: "Luxury gated community apartments for sale in Green Valley. Modern architecture, double parking, near central transit hubs.",
+        heading: "Apartments in Green Valley",
+        badge: "Connectivity Zone",
+        tagline: "Elegant contemporary residences built for modern families in elite residential zones.",
+        content: "Green Valley represents a refined residential destination. Offering smooth transit connectivity and close proximity to cultural hubs, Golden Horizon provides premium living with low-density privacy.",
+        projectSlug: "golden-horizon",
         showJv: false,
       };
-    case "hmda-approved-apartments":
+    case "certified-approved-apartments":
       return {
-        seoTitle: "HMDA & RERA Approved Apartments in Hyderabad | MGR",
-        seoDescription: "Buy legally secure, HMDA approved & RERA registered luxury apartments in Hyderabad by MGR Developers. Clear titles, home loan approvals.",
-        heading: "HMDA Approved Residences",
+        seoTitle: "Approved & Certified Apartments | Prime Estates",
+        seoDescription: "Buy legally secure, approved & RERA registered luxury apartments by Prime Estates. Clear titles, home loan approvals.",
+        heading: "Certified Approved Residences",
         badge: "100% Legally Secure Properties",
-        tagline: "Invest with peace of mind. All MGR projects undergo complete municipal vetting before excavation.",
-        content: "Purchasing an HMDA approved and RERA registered property guarantees complete safety against unauthorized layouts. We secure all permissions (TS-bPASS, fire safety, environmental clearance) ensuring hassle-free bank loan approvals and clean deeds.",
+        tagline: "Invest with peace of mind. All Prime Estates projects undergo complete municipal vetting before excavation.",
+        content: "Purchasing a certified and RERA registered property guarantees complete safety against unauthorized layouts. We secure all permissions ensuring hassle-free bank loan approvals and clean deeds.",
         projectSlug: null,
         showJv: false,
       };
-    case "luxury-3bhk-hyderabad":
+    case "luxury-3bhk-residences":
       return {
-        seoTitle: "Luxury 3BHK Apartments for Sale in Hyderabad | MGR",
-        seoDescription: "Buy premium high-end 3BHK flats in West Hyderabad with Italian marble floors, smart home pre-wiring, and rooftop amenities.",
+        seoTitle: "Luxury 3BHK Residences for Sale | Prime Estates",
+        seoDescription: "Buy premium high-end 3BHK flats with timber floors, smart home pre-wiring, and rooftop amenities.",
         heading: "Ultra-Luxury 3BHK Flats",
         badge: "High-End Spacing Standards",
         tagline: "Spacious cross-ventilated flats designed to maximize privacy, natural light, and structural durability.",
-        content: "Our luxury 3BHK specifications feature premium raw materials: Tata Tiscon Steel, Ultratech cement, Kohler bathrooms, and customized modular kitchen configurations. Experience premium community living with sky lounge decks.",
+        content: "Our luxury 3BHK specifications feature premium materials: high-strength steel, quality cement, luxury bath fittings, and customized modular kitchen configurations.",
         projectSlug: null,
         showJv: false,
       };
-    case "joint-venture-builders-hyderabad":
+    case "joint-venture-partnerships":
       return {
-        seoTitle: "Top Joint Venture Developers in Hyderabad | MGR Developers",
-        seoDescription: "Partner with MGR Developers for transparent, high-return Joint Ventures. Landowner area-sharing ratios with premium building execution.",
+        seoTitle: "Joint Venture Developers | Prime Estates",
+        seoDescription: "Partner with Prime Estates for transparent, high-return Joint Ventures. Landowner area-sharing ratios with premium building execution.",
         heading: "Joint Venture Collaborations",
         badge: "Transparent Land Development",
-        tagline: "Unlock the maximum potential value of your land with Hyderabad's trusted premium developers.",
-        content: "If you own a prime plot of 400 Sq.Yards or more in Hyderabad, our Joint Venture (JV) partnership lets you collaborate with us. We handle 100% of the approvals, architectural design, engineering and marketing, sharing built-up area under legal trust contracts.",
+        tagline: "Unlock the maximum potential value of your land with trusted premium developers.",
+        content: "If you own a prime plot of 400 Sq.Yards or more, our Joint Venture (JV) partnership lets you collaborate with us. We handle 100% of the approvals, architectural design, engineering and marketing.",
         projectSlug: null,
         showJv: true,
       };
@@ -120,7 +120,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             href="/"
             className="text-xs font-bold tracking-widest text-text-muted/60 hover:text-gold uppercase"
           >
-            MGR Developers
+            Prime Estates
           </Link>
           <span className="text-text-muted/30 mx-2">/</span>
           <span className="text-xs font-bold tracking-widest text-gold uppercase">{details.heading}</span>
@@ -147,7 +147,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         {!details.showJv && (
           <div className="space-y-8 pt-8">
             <h2 className="text-xl font-bold font-headings uppercase text-text-main border-l-2 border-gold pl-3">
-              Premium Projects Matching Search
+              Featured Projects Matching Search
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-sans">
               {filteredProjects.map((proj) => (
@@ -194,19 +194,19 @@ export default async function LocationPage({ params }: LocationPageProps) {
         {/* Localized SEO FAQ markup */}
         <div className="p-6 bg-white border border-border-accent rounded-2xl mt-12 space-y-4 shadow-sm">
           <h3 className="text-xs font-bold uppercase tracking-wider text-text-main">
-            Frequently Asked Questions in Hyderabad
+            Frequently Asked Questions
           </h3>
           <div className="space-y-4 text-xs font-sans">
             <div>
-              <p className="font-semibold text-text-main">1. Are MGR projects safe for property registration?</p>
+              <p className="font-semibold text-text-main">1. Are Prime Estates projects safe for property registration?</p>
               <p className="text-text-muted mt-1 leading-relaxed font-light">
-                Absolutely. Every MGR building maintains RERA clearance and HMDA layout compliance, validating clean legal titles before possession.
+                Absolutely. Every Prime Estates building maintains RERA clearance and layout compliance, validating clean legal titles before possession.
               </p>
             </div>
             <div>
-              <p className="font-semibold text-text-main">2. Can I get a home loan for flats in Manikonda or Tarnaka?</p>
+              <p className="font-semibold text-text-main">2. Can I get a home loan for flats in Financial District or Green Valley?</p>
               <p className="text-text-muted mt-1 leading-relaxed font-light">
-                Yes. Due to our legal approvals, our properties are pre-approved for residential home loans by top institutions like SBI, HDFC, and ICICI.
+                Yes. Due to our legal approvals, our properties are pre-approved for residential home loans by top financial institutions.
               </p>
             </div>
           </div>

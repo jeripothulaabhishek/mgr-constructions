@@ -94,7 +94,7 @@ export default function ProjectGallery({ images, projectTitle }: ProjectGalleryP
                   images[activeTab] && !images[activeTab].includes("placeholder") && !images[activeTab].includes("interior") && !images[activeTab].includes("floorplan") && !images[activeTab].includes("amenity")
                     ? "text-white/40"
                     : "text-text-muted/40"
-                }`}>MODEL: MGR-{activeTab.toUpperCase()}</span>
+                }`}>MODEL: PRIME-{activeTab.toUpperCase()}</span>
               </div>
 
               {/* Vector house outline placeholder fallback if no image */}

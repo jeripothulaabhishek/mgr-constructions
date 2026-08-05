@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { PROJECTS } from "@/content/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://mgrconstructions.in";
+  const baseUrl = "https://primeestates.com";
 
   // Core Static Pages
   const staticPages = ["", "/about", "/projects", "/services", "/jv", "/blog", "/contact"].map((route) => ({
@@ -22,11 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic Localized SEO Pages
   const seoLocationPages = [
-    "flats-in-manikonda",
-    "flats-in-tarnaka",
-    "hmda-approved-apartments",
-    "luxury-3bhk-hyderabad",
-    "joint-venture-builders-hyderabad",
+    "flats-in-financial-district",
+    "flats-in-green-valley",
+    "certified-approved-apartments",
+    "luxury-3bhk-residences",
+    "joint-venture-partnerships",
   ].map((loc) => ({
     url: `${baseUrl}/${loc}`,
     lastModified: new Date().toISOString(),

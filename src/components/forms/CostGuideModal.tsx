@@ -98,7 +98,7 @@ export default function CostGuideModal() {
         
         const link = document.createElement("a");
         link.href = CONTACT_CONFIG.brochures.costGuide;
-        link.download = "MGR-Construction-Cost-Guide-2026.pdf";
+        link.download = "Prime-Estates-Cost-Guide-2026.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -156,7 +156,7 @@ export default function CostGuideModal() {
                 Get Free Pricing Guide
               </h3>
               <p className="text-xs text-text-muted mt-2 max-w-sm font-sans font-light">
-                Unlock our detailed Hyderabad material specifications checklist and actual home building cost estimates for 2026.
+                Unlock our detailed material specifications checklist and home building cost estimates for 2026.
               </p>
             </div>
 
@@ -173,7 +173,7 @@ export default function CostGuideModal() {
                   Download Initiated!
                 </h4>
                 <p className="text-xs text-text-muted mt-2 font-light">
-                  Your PDF guide is downloading. Thank you for connecting with MGR.
+                  Your PDF guide is downloading. Thank you for connecting with Prime Estates.
                 </p>
               </motion.div>
             ) : (
