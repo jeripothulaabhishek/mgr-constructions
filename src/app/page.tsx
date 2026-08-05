@@ -6,9 +6,8 @@ import Amenities from "@/components/common/Amenities";
 import LocationAdvantages from "@/components/common/LocationAdvantages";
 import ProjectsFeatured from "@/components/projects/ProjectsFeatured";
 import TestimonialSlider from "@/components/testimonials/TestimonialSlider";
-import ContactForm from "@/components/forms/ContactForm";
-import FloatingIslandCenterpiece from "@/components/hero/FloatingIslandCenterpiece";
 import SmoothScroll from "@/components/common/SmoothScroll";
+import ContactForm from "@/components/forms/ContactForm";
 import LuxuryLoader from "@/components/common/LuxuryLoader";
 import SectionProgress from "@/components/common/SectionProgress";
 
@@ -20,9 +19,6 @@ export default function Home() {
 
       {/* Floating dot progress navigation tracker (v2.2) */}
       <SectionProgress />
-
-      {/* 3D Floating Island Centerpiece (Fixed overlay with scroll animations) */}
-      <FloatingIslandCenterpiece />
 
       {/* Main scroll track for GSAP triggers */}
       <div id="main-scroll-track" className="relative w-full min-h-screen">
