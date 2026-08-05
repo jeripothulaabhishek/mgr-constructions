@@ -46,6 +46,14 @@ export const metadata: Metadata = {
     title: SEO_CONFIG.defaultTitle,
     description: SEO_CONFIG.defaultDescription,
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
