@@ -6,7 +6,7 @@ import { SERVICES } from "@/content/services";
 
 // Helper component to resolve Lucide icons dynamically
 const ServiceIcon = ({ name, className }: { name: string; className?: string }) => {
-  const IconComponent = (Icons as any)[name];
+  const IconComponent = (Icons as unknown as Record<string, React.ComponentType<{ className?: string }>>)[name];
   if (!IconComponent) return <Icons.HelpCircle className={className} />;
   return <IconComponent className={className} />;
 };

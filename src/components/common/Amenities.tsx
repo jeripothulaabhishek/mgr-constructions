@@ -6,7 +6,7 @@ import { Waves, Dumbbell, Film, GlassWater, Baby, ShieldCheck, Car, Trees } from
 interface AmenityItem {
   name: string;
   desc: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const AMENITIES_LIST: AmenityItem[] = [

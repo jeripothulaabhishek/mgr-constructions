@@ -7,7 +7,7 @@ interface SmoothScrollProps {
   children: ReactNode;
 }
 
-export default function SmoothScroll({ children }: { children: ReactNode }) {
+export default function SmoothScroll({ children }: SmoothScrollProps) {
   useEffect(() => {
     // Initialize Lenis
     const lenis = new Lenis({

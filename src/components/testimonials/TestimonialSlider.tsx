@@ -102,7 +102,7 @@ export default function TestimonialSlider() {
                   ))}
                 </div>
                 <p className="text-[10px] text-text-main leading-relaxed font-light italic">
-                  "{active.feedback}"
+                  &quot;{active.feedback}&quot;
                 </p>
               </div>
 
@@ -136,7 +136,7 @@ export default function TestimonialSlider() {
                     ))}
                   </div>
                   <p className="text-xs text-text-main leading-relaxed font-light italic">
-                    "{active.feedback}"
+                    &quot;{active.feedback}&quot;
                   </p>
                 </div>
                 <div className="border-t border-border-accent/40 pt-4 mt-4 flex items-center gap-3">

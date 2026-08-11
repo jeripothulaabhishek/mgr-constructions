@@ -1,6 +1,6 @@
 import Hero from "@/components/hero/Hero";
 import AboutSection from "@/components/common/AboutSection";
-import WhyChooseMGR from "@/components/common/WhyChooseMGR";
+import WhyChoosePrime from "@/components/common/WhyChoosePrime";
 import ConstructionPhilosophy from "@/components/common/ConstructionPhilosophy";
 import Amenities from "@/components/common/Amenities";
 import LocationAdvantages from "@/components/common/LocationAdvantages";
@@ -29,7 +29,7 @@ export default function Home() {
         <AboutSection />
 
         {/* Section 3: Why Choose Prime Estates (Trust Cards) */}
-        <WhyChooseMGR />
+        <WhyChoosePrime />
 
         {/* Section 4: Construction Philosophy (Architectural Standard) */}
         <ConstructionPhilosophy />

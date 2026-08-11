@@ -60,17 +60,17 @@ export default function ContactForm() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   useEffect(() => {
-    let checkTurnstile = setInterval(() => {
-      if ((window as any).turnstile) {
+    const checkTurnstile = setInterval(() => {
+      if (window.turnstile) {
         clearInterval(checkTurnstile);
         try {
-          (window as any).turnstile.render("#turnstile-contact", {
+          window.turnstile.render("#turnstile-contact", {
             sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA",
             callback: (token: string) => {
               setTurnstileToken(token);
             },
           });
-        } catch (e) {
+        } catch {
           // Already rendered
         }
       }
@@ -111,8 +111,8 @@ export default function ContactForm() {
         setTimeout(() => {
           setSuccess(false);
           reset();
-          if ((window as any).turnstile) {
-            (window as any).turnstile.reset("#turnstile-contact");
+          if (window.turnstile) {
+            window.turnstile.reset("#turnstile-contact");
           }
         }, 3000);
       } else {

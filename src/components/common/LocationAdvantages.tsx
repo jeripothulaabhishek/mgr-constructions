@@ -101,7 +101,7 @@ export default function LocationAdvantages() {
             Location Advantage
           </h2>
           <p className="luxury-paragraph text-text-muted mt-4 font-light">
-            Enjoy premium connectivity with West Hyderabad's commercial corridors, elite education, and retail hubs.
+            Enjoy premium connectivity with West Hyderabad&apos;s commercial corridors, elite education, and retail hubs.
           </p>
         </div>
 

@@ -136,7 +136,7 @@ export default function ProjectGallery({ images, projectTitle }: ProjectGalleryP
             return (
               <button
                 key={tab.key}
-                onClick={() => setActiveTab(tab.key as any)}
+                onClick={() => setActiveTab(tab.key as keyof GalleryType)}
                 className={`p-3.5 rounded-xl border text-left flex flex-col justify-between h-20 transition-all cursor-pointer shadow-sm ${
                   isActive
                     ? "bg-gold/10 border-gold text-gold"

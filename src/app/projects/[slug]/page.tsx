@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle2, MapPin, Download, Calendar, HardHat } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MapPin, HardHat } from "lucide-react";
 import { PROJECTS } from "@/content/projects";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 

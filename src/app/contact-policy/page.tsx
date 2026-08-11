@@ -73,9 +73,9 @@ export default function ContactPolicyPage() {
             You retain full control over your subscription preferences. If you wish to cease receiving communication from {COMPANY.name}:
           </p>
           <ul className="list-disc pl-5 space-y-2">
-            <li>Email "UNSUBSCRIBE" to <a href={`mailto:${COMPANY.email}`} className="text-gold underline">{COMPANY.email}</a>.</li>
-            <li>Reply "STOP" to any WhatsApp communication sent by our team.</li>
-            <li>Request our support consultant during any phone call to flag your record in our database as "Do Not Call".</li>
+            <li>Email &quot;UNSUBSCRIBE&quot; to <a href={`mailto:${COMPANY.email}`} className="text-gold underline">{COMPANY.email}</a>.</li>
+            <li>Reply &quot;STOP&quot; to any WhatsApp communication sent by our team.</li>
+            <li>Request our support consultant during any phone call to flag your record in our database as &quot;Do Not Call&quot;.</li>
           </ul>
         </div>
 

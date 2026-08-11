@@ -70,3 +70,47 @@ export interface BlogPost {
   image: string;
   author: string;
 }
+
+export type LeadSource =
+  | 'cost_calculator'
+  | 'contact'
+  | 'site_visit'
+  | 'jv_consultation'
+  | 'lead_magnet'
+  | 'newsletter';
+
+export interface LeadData {
+  name: string;
+  email: string;
+  phone: string;
+  message?: string;
+  source: LeadSource;
+  metadata?: Record<string, unknown>;
+}
+
+export interface LeadSubmitResponse {
+  success: boolean;
+  message?: string;
+  error?: string;
+}
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    turnstile?: {
+      render: (
+        container: string | HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          "error-callback"?: (errorCode?: string) => void;
+          "expired-callback"?: () => void;
+          theme?: "light" | "dark" | "auto";
+        }
+      ) => string;
+      reset: (widgetId?: string | HTMLElement) => void;
+      remove: (widgetId: string | HTMLElement) => void;
+    };
+  }
+}
+

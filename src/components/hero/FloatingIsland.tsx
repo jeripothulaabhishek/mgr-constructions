@@ -35,7 +35,7 @@ export default function FloatingIsland() {
     mm.add("(min-width: 1024px)", () => {
       gsap.set(element, { x: "18vw", scale: 0.9, opacity: 1 });
 
-      // 1. Hero -> About MGR
+      // 1. Hero -> About Prime Estates
       gsap.to(element, {
         scrollTrigger: {
           trigger: "#about-section",
@@ -49,7 +49,7 @@ export default function FloatingIsland() {
         ease: "power2.inOut",
       });
 
-      // 2. About -> Why Choose MGR
+      // 2. About -> Why Choose Prime Estates
       gsap.to(element, {
         scrollTrigger: {
           trigger: "#choose-section",
@@ -63,7 +63,7 @@ export default function FloatingIsland() {
         ease: "power2.inOut",
       });
 
-      // 3. Why Choose MGR -> Construction Philosophy
+      // 3. Why Choose Prime Estates -> Construction Philosophy
       gsap.to(element, {
         scrollTrigger: {
           trigger: "#philosophy-section",

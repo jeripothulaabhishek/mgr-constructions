@@ -8,7 +8,7 @@ interface Metric {
   value: number;
   suffix: string;
   label: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
 }
 
 const METRICS: Metric[] = [
@@ -31,7 +31,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
     const duration = 2000;
     const increment = end / (duration / 16);
     
-    let timer = setInterval(() => {
+    const timer = setInterval(() => {
       start += increment;
       if (start >= end) {
         clearInterval(timer);

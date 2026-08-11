@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ShieldCheck, CalendarCheck, Landmark, Award, HeartHandshake, Eye } from "lucide-react";
 
-export default function WhyChooseMGR() {
+export default function WhyChoosePrime() {
   const cards = [
     {
       title: "Generational Structural Quality",

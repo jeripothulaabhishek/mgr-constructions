@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Compass, MapPin, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { PROJECTS } from "@/content/projects";
 
 export const metadata = {

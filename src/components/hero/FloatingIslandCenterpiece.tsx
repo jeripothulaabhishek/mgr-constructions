@@ -145,21 +145,21 @@ export default function FloatingIslandCenterpiece() {
 
       // GSAP Timeline coordinates the camera transitions through the sections
       tl.to(element, {
-        // Step 1: Hero to About MGR (shifts right, opens left for stats)
+        // Step 1: Hero to About Prime Estates (shifts right, opens left for stats)
         x: "15vw",
         scale: 0.8,
         duration: 1,
         ease: "power2.inOut"
       })
       .to(element, {
-        // Step 2: About to Why Choose MGR (shifts left for cards on right)
+        // Step 2: About to Why Choose Prime Estates (shifts left for cards on right)
         x: "-15vw",
         scale: 0.85,
         duration: 1,
         ease: "power2.inOut"
       })
       .to(element, {
-        // Step 3: Why Choose MGR to Construction Philosophy (shifts right for text on left)
+        // Step 3: Why Choose Prime Estates to Construction Philosophy (shifts right for text on left)
         x: "16vw",
         scale: 0.8,
         duration: 1,

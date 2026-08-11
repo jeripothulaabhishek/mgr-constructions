@@ -55,17 +55,17 @@ export default function CostGuideModal() {
 
   useEffect(() => {
     if (isOpen) {
-      let checkTurnstile = setInterval(() => {
-        if ((window as any).turnstile) {
+      const checkTurnstile = setInterval(() => {
+        if (window.turnstile) {
           clearInterval(checkTurnstile);
           try {
-            (window as any).turnstile.render("#turnstile-guide", {
+            window.turnstile.render("#turnstile-guide", {
               sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA",
               callback: (token: string) => {
                 setTurnstileToken(token);
               },
             });
-          } catch (e) {
+          } catch {
             // Already rendered
           }
         }

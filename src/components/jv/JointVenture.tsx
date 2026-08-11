@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { motion } from "framer-motion";
-import { FileCheck, TrendingUp, Landmark, Loader2, ArrowRight, Compass, ShieldAlert } from "lucide-react";
+import { FileCheck, Loader2, ArrowRight, Compass, ShieldAlert } from "lucide-react";
 
 const jvSchema = zod.object({
   name: zod.string().min(2, "Name must be at least 2 characters"),
@@ -25,17 +25,17 @@ export default function JointVenture() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
 
   useEffect(() => {
-    let checkTurnstile = setInterval(() => {
-      if ((window as any).turnstile) {
+    const checkTurnstile = setInterval(() => {
+      if (window.turnstile) {
         clearInterval(checkTurnstile);
         try {
-          (window as any).turnstile.render("#turnstile-jv", {
+          window.turnstile.render("#turnstile-jv", {
             sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA",
             callback: (token: string) => {
               setTurnstileToken(token);
             },
           });
-        } catch (e) {
+        } catch {
           // Already rendered
         }
       }
@@ -83,8 +83,8 @@ export default function JointVenture() {
         setTimeout(() => {
           setSuccess(false);
           reset();
-          if ((window as any).turnstile) {
-            (window as any).turnstile.reset("#turnstile-jv");
+          if (window.turnstile) {
+            window.turnstile.reset("#turnstile-jv");
           }
         }, 3000);
       } else {

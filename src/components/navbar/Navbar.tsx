@@ -58,6 +58,7 @@ export default function Navbar() {
 
   // Close menus on path changes
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false);
     setActiveDropdown(null);
   }, [pathname]);
@@ -174,7 +175,7 @@ export default function Navbar() {
           <a
             href={`tel:${COMPANY.phoneRaw}`}
             className="p-2.5 rounded-lg glass-panel text-gold hover:text-text-main transition-colors"
-            aria-label="Call MGR Support"
+            aria-label="Call Prime Estates Support"
           >
             <Phone className="w-4 h-4" />
           </a>
@@ -202,6 +203,7 @@ export default function Navbar() {
                 {!hasChildren ? (
                   <Link
                     href={link.href}
+                    onClick={() => setIsOpen(false)}
                     className="text-base font-bold text-text-main hover:text-gold uppercase tracking-wider font-headings"
                   >
                     {link.label}
@@ -216,6 +218,7 @@ export default function Navbar() {
                         <Link
                           key={child.label}
                           href={child.href}
+                          onClick={() => setIsOpen(false)}
                           className="text-sm font-bold text-text-main hover:text-gold uppercase tracking-wide font-headings"
                         >
                           {child.label}

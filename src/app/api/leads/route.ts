@@ -1,15 +1,25 @@
 import { NextResponse } from "next/server";
-import { submitLead, LeadData } from "@/lib/leads";
+import { submitLead } from "@/lib/leads";
+import { LeadData } from "@/types";
 
 // Sliding window memory cache for simple API rate limiting
 const ipCache = new Map<string, { count: number; lastReset: number }>();
 
 export async function POST(request: Request) {
   try {
-    const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "unknown-ip";
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "unknown-ip";
     const now = Date.now();
     const limit = 5; // 5 submissions per minute maximum per IP
     const windowMs = 60 * 1000;
+
+    // Maintenance cleanup if cache grows large
+    if (ipCache.size > 1000) {
+      for (const [cachedIp, rateData] of ipCache.entries()) {
+        if (now - rateData.lastReset > 5 * 60 * 1000) {
+          ipCache.delete(cachedIp);
+        }
+      }
+    }
 
     // Rate limiter check
     const rateData = ipCache.get(ip) || { count: 0, lastReset: now };
@@ -32,10 +42,9 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     // 1. Honeypot check
-    // If the hidden 'website' field is populated, we suspect a bot and ignore/simulate success.
-    if (body.website && body.website.trim() !== "") {
+    if (body.website && typeof body.website === "string" && body.website.trim() !== "") {
       console.warn(`[Leads API] Honeypot triggered by bot submission.`);
-      return NextResponse.json({ success: true, message: "Inquiry registered successfully (sandbox mode)." });
+      return NextResponse.json({ success: true, message: "Inquiry registered successfully." });
     }
 
     // 2. Turnstile Verification
@@ -72,7 +81,6 @@ export async function POST(request: Request) {
         }
       } catch (err) {
         console.error("[Leads API] Turnstile fetch error:", err);
-        // Fallback: let the request through if the Cloudflare API is physically down, to prevent losing genuine leads
       }
     }
 
@@ -85,8 +93,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Input sanitization: Strip basic HTML tags to block content script injections
-    const sanitize = (val: string) => val.replace(/<\/?[^>]+(>|$)/g, "").trim();
+    // Input sanitization
+    const sanitize = (val: string) => String(val).replace(/<\/?[^>]+(>|$)/g, "").trim();
 
     const leadData: LeadData = {
       name: sanitize(name),
@@ -104,11 +112,13 @@ export async function POST(request: Request) {
     } else {
       return NextResponse.json({ success: false, error: result.message }, { status: 500 });
     }
-  } catch (error: any) {
-    console.error("[Leads API Router Error]:", error);
+  } catch (error: unknown) {
+    const errMessage = error instanceof Error ? error.message : "Internal server error";
+    console.error("[Leads API Router Error]:", errMessage);
     return NextResponse.json(
-      { success: false, error: error.message || "Internal server error" },
+      { success: false, error: errMessage },
       { status: 500 }
     );
   }
 }
+

@@ -44,10 +44,11 @@ export default function CostCalculatorModal() {
       setErrorMsg(null);
       setHoneypot("");
       setTurnstileToken(null);
+      reset();
     };
     window.addEventListener("open-calculator", handleOpen);
     return () => window.removeEventListener("open-calculator", handleOpen);
-  }, []);
+  }, [reset]);
 
   useEffect(() => {
     if (isOpen) {
@@ -59,17 +60,17 @@ export default function CostCalculatorModal() {
 
   useEffect(() => {
     if (step === 2 && isOpen) {
-      let checkTurnstile = setInterval(() => {
-        if ((window as any).turnstile) {
+      const checkTurnstile = setInterval(() => {
+        if (window.turnstile) {
           clearInterval(checkTurnstile);
           try {
-            (window as any).turnstile.render("#turnstile-calc", {
+            window.turnstile.render("#turnstile-calc", {
               sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA",
               callback: (token: string) => {
                 setTurnstileToken(token);
               },
             });
-          } catch (e) {
+          } catch {
             // Already rendered
           }
         }
@@ -271,7 +272,7 @@ export default function CostCalculatorModal() {
                     ].map((item) => (
                       <button
                         key={item.key}
-                        onClick={() => setType(item.key as any)}
+                        onClick={() => setType(item.key as "villa" | "apartment" | "commercial")}
                         className={`p-3 rounded-lg border text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
                           type === item.key
                             ? "bg-gold/10 border-gold text-gold"
@@ -309,7 +310,7 @@ export default function CostCalculatorModal() {
                     ].map((item) => (
                       <button
                         key={item.key}
-                        onClick={() => setQuality(item.key as any)}
+                        onClick={() => setQuality(item.key as "classic" | "premium" | "luxury")}
                         className={`p-4 rounded-lg border text-left flex flex-col justify-between h-28 transition-all cursor-pointer ${
                           quality === item.key
                             ? "bg-gold/10 border-gold text-gold"

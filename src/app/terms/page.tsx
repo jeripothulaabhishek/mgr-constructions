@@ -37,7 +37,7 @@ export default function TermsPage() {
         {/* Legal Text */}
         <div className="space-y-6 text-sm text-text-muted font-light leading-relaxed">
           <p>
-            Welcome to <strong>{COMPANY.name}</strong>. These terms and conditions outline the rules and regulations for the use of {COMPANY.legalName}'s Website, located at <Link href="/" className="text-gold underline">primeestates.com</Link>.
+            Welcome to <strong>{COMPANY.name}</strong>. These terms and conditions outline the rules and regulations for the use of {COMPANY.legalName}&apos;s Website, located at <Link href="/" className="text-gold underline">primeestates.com</Link>.
           </p>
 
           <h3 className="font-bold text-text-main uppercase font-headings text-sm pt-2">

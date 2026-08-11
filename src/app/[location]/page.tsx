@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight, MapPin, Compass, Landmark } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { PROJECTS } from "@/content/projects";
 import JointVenture from "@/components/jv/JointVenture";
 

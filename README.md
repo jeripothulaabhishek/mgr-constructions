@@ -1,93 +1,92 @@
-# MGR Constructions - Luxury Real Estate Web Engine
+# MGR Constructions - Luxury Real Estate Web Application
 
-A high-converting, premium real estate web application built for **MGR Constructions** (Hyderabad) using Next.js 15, React 19, Tailwind CSS v4, and React Three Fiber.
+A modern, high-performance luxury real estate web application built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **GSAP**, and **Framer Motion**. Designed specifically for real estate developers, property builders, and luxury estate agencies.
 
 ---
 
-## 🚀 Quick Start (Local Development)
+## 🛠️ Tech Stack
 
-First, install dependencies:
+* **Framework**: Next.js 16 (App Router)
+* **Library**: React 19 & TypeScript
+* **Styling**: Tailwind CSS v4 & Lucide React Icons
+* **Animations**: GSAP (ScrollTrigger), Framer Motion & Lenis Smooth Scroll
+* **Forms & Validation**: React Hook Form & Zod
+* **Bot Protection**: Cloudflare Turnstile integration
+
+---
+
+## 🚀 Quick Start Guide
+
+### 1. Install Dependencies
 ```bash
 npm install
 ```
 
-Second, run the local development server:
+### 2. Configure Environment Variables
+Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+Modify `.env.local` to fit your project requirements:
+```env
+NEXT_PUBLIC_SITE_URL=https://mgrconstructions.in
+LEAD_PROVIDER=console
+NOTIFICATION_EMAIL=info@mgrconstructions.in
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+```
+
+### 3. Run Development Server
 ```bash
 npm run dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to inspect the application.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🛠️ Environment Configurations (`.env.local`)
+## ⚡ Production Build
 
-This website incorporates a unified CRM lead capture abstraction layer. Create a `.env.local` file in the root directory and specify your provider keys:
-
-```env
-# Define the active lead destination (options: supabase | resend | formspree | emailjs | sheets | console)
-LEAD_PROVIDER=console
-
-# Destination Notification Email for Alert Routing
-NOTIFICATION_EMAIL=info@mgrconstructions.in
-
-# Provider 1: RESEND Configuration
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxx
-
-# Provider 2: SUPABASE Configuration
-SUPABASE_URL=https://xxxxxxxxxxxxxxxx.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-
-# Provider 3: FORMSPREE Configuration
-FORMSPREE_FORM_ID=xxxxxx
-
-# Provider 4: EMAILJS Configuration
-EMAILJS_SERVICE_ID=service_xxxx
-EMAILJS_TEMPLATE_ID=template_xxxx
-EMAILJS_USER_ID=user_xxxx
-
-# Provider 5: GOOGLE SHEETS Configuration
-GOOGLE_SHEETS_SCRIPT_URL=https://script.google.com/macros/s/xxxx/exec
-
-# Calendly Scheduling Integration (Optional fallback: https://calendly.com/calendly/30min)
-NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/mgr-constructions/site-visit
-NEXT_PUBLIC_CALENDLY_USERNAME=mgr-constructions
-NEXT_PUBLIC_CALENDLY_EVENT=site-visit
+To verify and create an optimized production build:
+```bash
+npm run build
+npm run start
 ```
 
 ---
 
-## 🖼️ Admin Image Uploads & Brochure Schema
+## 📩 Backend API & Lead Routing
 
-To change project images or brochures without writing or modifying code, drop replacement assets directly into the public folders matching these structures:
+The website includes a dedicated backend API route located at `/api/leads` ([`src/app/api/leads/route.ts`](file:///d:/websites/mgr-constructions/src/app/api/leads/route.ts)):
 
-### 📄 Brochure PDFs (`public/brochures/`)
-- Rename the Hyderabad Construction Pricing breakdown guide: `construction-cost-guide.pdf`
-- Rename project brochures: `manikonda-residences.pdf`, `platinum-enclave.pdf`
-
-### 🏢 Property Image Uploads (`public/uploads/projects/`)
-Organized by folder names:
-- Manikonda: `public/uploads/projects/manikonda-residences/`
-- Tarnaka: `public/uploads/projects/platinum-enclave/`
-
-Inside each project directory, drop exactly these 4 image names:
-- `exterior.webp` (Main perspective view)
-- `interior.webp` (Living room / Kitchen design concepts)
-- `floorplan.webp` (HMDA structural outline blueprint)
-- `amenity.webp` (Gym, elevator, or garden photos)
+* **IP Rate Limiting**: Restricts submissions to max 5 submissions per minute per IP.
+* **Honeypot Trap**: Invisible field check to block bot submissions automatically.
+* **Cloudflare Turnstile Verification**: Validates human interaction tokens server-side.
+* **Extensible Lead Service**: Lead dispatching logic is handled in [`src/lib/leads/index.ts`](file:///d:/websites/mgr-constructions/src/lib/leads/index.ts). Supports logging to server console or dispatching to external Webhook endpoints (e.g. CRM, Google Sheets, Make, Zapier).
 
 ---
 
-## 📦 Vercel Production Deployment
+## 🎨 Customizing Content & Assets
 
-This project is pre-configured with `vercel.json` headers to achieve:
-1. **Lighthouse SEO (100)**: Proper robots index directives.
-2. **Performance (95+)**: High-speed asset caching for uploaded folders.
-3. **Security**: Hardened HTTP protection headers.
+### 📁 Business Details & Navigation
+* Company Info (Name, Address, Phone, Map): [`src/config/company.ts`](file:///d:/websites/mgr-constructions/src/config/company.ts)
+* Navigation Links: [`src/config/navigation.ts`](file:///d:/websites/mgr-constructions/src/config/navigation.ts)
+* SEO & Metadata Defaults: [`src/config/seo.ts`](file:///d:/websites/mgr-constructions/src/config/seo.ts)
 
-To deploy instantly:
-1. Initialize a Git repository and push this folder to GitHub/GitLab.
-2. Connect the repository to your Vercel Dashboard.
-3. Configure the environment variables (e.g. `LEAD_PROVIDER=console` or `supabase`).
-4. Click **Deploy**. Vercel will automatically compile the production build.
+### 📄 Property Projects & Content
+* Properties & Projects: [`src/content/projects.ts`](file:///d:/websites/mgr-constructions/src/content/projects.ts)
+* Services List: [`src/content/services.ts`](file:///d:/websites/mgr-constructions/src/content/services.ts)
+* Testimonials & Reviews: [`src/content/testimonials.ts`](file:///d:/websites/mgr-constructions/src/content/testimonials.ts)
 
+### 🖼️ Property Images & Uploads
+Image assets reside in `public/uploads/projects/`:
+* `exterior.webp` - Main perspective view
+* `interior.webp` - Interior design concepts
+* `floorplan.webp` - Floorplan layout
+* `amenity.webp` - Amenities photos
+
+---
+
+## 📄 License
+
+Product Source Code Package. Ready for commercial customization and deployment.
