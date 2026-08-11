@@ -1,4 +1,4 @@
-# MGR Constructions - Luxury Real Estate Web Application
+# Prime Estates - Luxury Real Estate Web Application
 
 A modern, high-performance luxury real estate web application built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS v4**, **GSAP**, and **Framer Motion**. Designed specifically for real estate developers, property builders, and luxury estate agencies.
 
@@ -30,9 +30,9 @@ cp .env.example .env.local
 
 Modify `.env.local` to fit your project requirements:
 ```env
-NEXT_PUBLIC_SITE_URL=https://mgrconstructions.in
+NEXT_PUBLIC_SITE_URL=https://primeestates.com
 LEAD_PROVIDER=console
-NOTIFICATION_EMAIL=info@mgrconstructions.in
+NOTIFICATION_EMAIL=info@primeestates.com
 NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA
 TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
 ```
